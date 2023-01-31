@@ -1,5 +1,5 @@
 Wireframe 1:
-[TODO describe wireframe](./UI/First wireframe AM.png)
+![TODO describe wireframe](UI/FirstWireframeAM.png)
 
 Wireframe 2:
-[TODO describe wireframe](./UI/Second wireframe AM.png)
+![TODO describe wireframe](UI/SecondWireframeAM.png)
