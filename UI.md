@@ -1,5 +1,11 @@
-Wireframe 1:
-![TODO describe wireframe](UI/FirstWireframeAM.png)
+# Wireframe 1 (Balsamiq):
 
-Wireframe 2:
-![TODO describe wireframe](UI/SecondWireframeAM.png)
+![](UI/FirstWireframeAM.png)
+
+This wireframe describes the functionality of...
+
+# Wireframe 2 (Balsamiq):
+
+![](UI/SecondWireframeAM.png)
+
+This wireframe describes the functionality of...
