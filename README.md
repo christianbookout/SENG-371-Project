@@ -1,11 +1,7 @@
 # SENG-371-Project
 
-hi
+This is the github repo for the SENG 371 course project.
 
-hi scooter
+For this project we are developing the "Digital Beginner Stock Trading" application for group 12, on brightspace. This project will follow the course timeline outlined in lecture and on brightspaces.
 
-scooter dinner
-
-dinner recipe
-
-eating dinner
+Milestone 1 is due on Friday Febuary 10th 2023.
