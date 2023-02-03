@@ -3,7 +3,10 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { auth, sendPasswordReset } from "../firebase";
-import "./Reset.css";
+import { LoginContainer } from "./LoginContainer";
+import { LoginFormContainer } from "./LoginFormContainer";
+import { LoginInput } from "./LoginInput";
+
 function Reset() {
   const [email, setEmail] = useState("");
   const [user, loading, error] = useAuthState(auth);
@@ -13,26 +16,29 @@ function Reset() {
     if (user) navigate("/dashboard");
   }, [user, loading]);
   return (
-    <div className="reset">
-      <div className="reset__container">
-        <input
+    <LoginContainer>
+      <LoginFormContainer>
+        <LoginInput
           type="text"
-          className="reset__textBox"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
         />
         <button
-          className="reset__btn"
+          className="w-100 h-12 bg-black text-xl text-white"
           onClick={() => sendPasswordReset(email)}
         >
           Send password reset email
         </button>
         <div>
-          Don't have an account? <Link to="/register">Register</Link> now.
+          Don't have an account?
+          <Link to="/register" className="underline hover:text-gray-600">
+            Register
+          </Link>
+          now.
         </div>
-      </div>
-    </div>
+      </LoginFormContainer>
+    </LoginContainer>
   );
 }
 export default Reset;

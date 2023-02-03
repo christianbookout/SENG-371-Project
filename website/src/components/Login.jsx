@@ -1,8 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import { auth, logInWithEmailAndPassword, signInWithGoogle } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import "./Login.css";
 import { useEffect, useState } from "react";
+import { LoginContainer } from "./LoginContainer";
+import { LoginFormContainer } from "./LoginFormContainer";
+import { LoginInput } from "./LoginInput";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,39 +18,44 @@ function Login() {
     if (user) navigate("/dashboard");
   }, [user, loading]);
   return (
-    <div className="login">
-      <div className="login__container">
-        <input
+    <LoginContainer>
+      <LoginFormContainer>
+        <LoginInput
           type="text"
-          className="login__textBox"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
         />
-        <input
+        <LoginInput
           type="password"
-          className="login__textBox"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
         <button
-          className="login__btn"
+          className="w-100 h-12 bg-green-700 text-xl text-white"
           onClick={() => logInWithEmailAndPassword(email, password)}
         >
           Login
         </button>
-        <button className="login__btn login__google" onClick={signInWithGoogle}>
+        <button
+          className="w-100 h-12 bg-blue-500 text-xl text-white"
+          onClick={signInWithGoogle}
+        >
           Login with Google
         </button>
-        <div>
+        <div className="w-100 text-center text-sm underline hover:text-gray-600">
           <Link to="/reset">Forgot Password</Link>
         </div>
-        <div>
-          Don't have an account? <Link to="/register">Register</Link> now.
+        <div className="w-100 justify-self-end text-center">
+          Don't have an account?{" "}
+          <Link to="/register" className="underline hover:text-gray-600">
+            Register
+          </Link>{" "}
+          now.
         </div>
-      </div>
-    </div>
+      </LoginFormContainer>
+    </LoginContainer>
   );
 }
 export default Login;

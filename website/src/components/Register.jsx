@@ -6,13 +6,17 @@ import {
   registerWithEmailAndPassword,
   signInWithGoogle,
 } from "../firebase";
-import "./Register.css";
+import { LoginContainer } from "./LoginContainer";
+import { LoginFormContainer } from "./LoginFormContainer";
+import { LoginInput } from "./LoginInput";
+
 function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
+
   const register = () => {
     if (!name) alert("Please enter name");
     registerWithEmailAndPassword(name, email, password);
@@ -22,43 +26,47 @@ function Register() {
     if (user) navigate("/dashboard");
   }, [user, loading]);
   return (
-    <div className="register">
-      <div className="register__container">
-        <input
+    <LoginContainer>
+      <LoginFormContainer>
+        <LoginInput
           type="text"
-          className="register__textBox"
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Full Name"
         />
-        <input
+        <LoginInput
           type="text"
-          className="register__textBox"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
         />
-        <input
+        <LoginInput
           type="password"
-          className="register__textBox"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
-        <button className="register__btn" onClick={register}>
+        <button
+          className="w-100 h-12 bg-green-700 text-xl text-white"
+          onClick={register}
+        >
           Register
         </button>
         <button
-          className="register__btn register__google"
+          className="w-100 h-12 bg-blue-500 text-xl text-white"
           onClick={signInWithGoogle}
         >
           Register with Google
         </button>
-        <div>
-          Already have an account? <Link to="/">Login</Link> now.
+        <div className="w-100 text-center">
+          Already have an account?{" "}
+          <Link to="/" className="underline hover:text-gray-600">
+            Login
+          </Link>{" "}
+          now.
         </div>
-      </div>
-    </div>
+      </LoginFormContainer>
+    </LoginContainer>
   );
 }
 export default Register;
