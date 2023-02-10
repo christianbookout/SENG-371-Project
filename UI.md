@@ -14,10 +14,10 @@ This wireframe describes the functionality of the learning view. When viewing th
 
 ![](UI/UIPrototypeLogin.png)
 
-This wireframe describes the functionality of...
+This wireframe displays an example of what we will mimic our welcome page to be. Where after clicking get started you will be given options such as login and create an account which both will lead to further prompts.
 
 # Wireframe 4 (Figma):
 
 ![](UI/UIStockViewPrototype.JPG)
 
-This wireframe describes the functionality of...
+This wireframe describes the functionality of the stock information view. This view will display in depth information regarding a selected stock. Information will include a graph displaying price fluctuations over the selected time period, the active price of the stock, and statistics of the stock such as the market cap, that day's opening bid, the current high and low prices and more.
