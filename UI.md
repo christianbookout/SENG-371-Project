@@ -21,3 +21,9 @@ This wireframe displays an example of what we will mimic our welcome page to be.
 ![](UI/UIStockViewPrototype.JPG)
 
 This wireframe describes the functionality of the stock information view. This view will display in depth information regarding a selected stock. Information will include a graph displaying price fluctuations over the selected time period, the active price of the stock, and statistics of the stock such as the market cap, that day's opening bid, the current high and low prices and more.
+
+# Wireframe 5 (Figma):
+
+![](UI/NewsUI.png)
+
+This wireframe describes the functionality of the news page. The intentions of the news page is to show users current events that could possibly pertain to stock market fluctuations. For example the fluctuation in oil prices due to the invasion of Ukraine. 
