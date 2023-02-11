@@ -12,4 +12,4 @@ Milestone 1:
 * [Software Self Adaption](./SelfAdaption.md)
 * [UI Prototypes](./UI.md)
 * [Request For Proposal](./RFP.md)
-* The code for the website so far is in [the website folder](./website)
+* [The code for the website so far](./website)
