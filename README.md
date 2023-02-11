@@ -6,12 +6,10 @@ For this project, we are developing the "Digital Beginner Stock Trading" applica
 
 Milestone 1 is due on Friday Febuary 10th 2023.
 
-Milestone 1 links:
+Milestone 1:
 
 * [Requirements Document](./RequirementsDocument.md)
-
 * [Software Self Adaption](./SelfAdaption.md)
-
 * [UI Prototypes](./UI.md)
-
 * [Request For Proposal](./RFP.md)
+* The code for the website so far is in [the website folder](./website)
