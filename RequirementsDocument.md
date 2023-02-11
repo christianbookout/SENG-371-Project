@@ -1,40 +1,6 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Requirements Document
 
-
 ## Digital Beginner Stock Trading</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #### Pelican Innovations
 
@@ -66,11 +32,7 @@ Last update: Feb 10, 2023
   </tr>
 </table>
 
-
-
-
 # 1 Introduction
-
 
 ## 1.1 Purpose
 
@@ -284,19 +246,15 @@ This portion of the document describes the interactions that this system will ha
 
 
 ## 4.1 User Interfaces
-The system will be designed with a user interface similar to the one included in the image below.
-
-XXX INCLUDE IMAGE AND DESCRIBE WHAT IT SHOWS
-
-
-<Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Define the software components for which a user interface is needed.>
+The system will be designed with a user interface similar to the ones in [the UI file here](./UI.md)
 
 
 ## 4.2 Software Interfaces
-This product will need to interface with the XXX API version XXX. The ___ API allows the ability to connect our app to the real world stock market to be able to track stocks in real time, and give users real time updates on their portfolios. Additionally, through the use of Google’s Firebase platform we will hold user login information. Firebase will also do the web hosting for our web app. 
+This product will need to interface with the Alpha Vantage Stock API. This API allows the ability to connect our app to the real world stock market to be able to track stocks in real time, and give users real time updates on their portfolios. Additionally, through the use of Google’s Firebase platform we will hold user login information. Firebase will also do the web hosting for our web app. 
 
 
 As development has not started in full yet the exact libraries that are intended to be used have not been specified. This will be added and updated in future versions of this document.
+
 
 
 ## 4.3 Communications Interfaces
