@@ -1,6 +1,6 @@
 # Requirements Document
 
-## Digital Beginner Stock Trading</div>
+## Digital Beginner Stock Trading
 
 #### Pelican Innovations
 
