@@ -1,4 +1,4 @@
-# Software Self Adaption
+# Idea #1: Software Self Adaption
 
 ## Investment Feedback
 The investment training application will give specific feedback on what the user did poorly and what they did well. Each decision the user makes will be tracked in the system, so feedback can be given accordingly. This adaptive system will use existing knowledge and algorithms to give realistic advice without being overly complicated.
@@ -11,6 +11,11 @@ If a user invests in a stock while it is on the rise, their successful investmen
 
 ---
 
-## Second Idea
+# Idea #2: News Feed
+The investment training application may give an either real or fake news feed based on what the user is currently investing in. This way, the user can stay up-to-date on all of the ongoing events in the real world that may change how well a stock is doing.
 
-TODO 
+---
+
+# Idea #3: Investment Advisor
+The investment training application may find a trained professional advisor to link to and view the user’s current portfolio, give suggestions, and help them improve their skills. This could also be done with an AI instead of a trained professional advisor. 
+
