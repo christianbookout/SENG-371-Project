@@ -13,3 +13,12 @@ Milestone 1:
 * [UI Prototypes](./UI.md)
 * [Request For Proposal](./RFP.md)
 * [The code for the website so far](./website)
+
+Milestone 2 is due on Sunday March 5th 2023.
+
+Milestone 2:
+
+*[Updated Requirements Document]
+*[Updated architecture]
+*[Pipeline details]
+*[Limited functionality app]
