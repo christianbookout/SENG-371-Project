@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Route, Routes, Switch } from "react-router-dom";
 import { Header } from "./components/Header";
 import { logInWithEmailAndPassword } from "./firebase";
-import Login from "./components/Login";
-import Register from "./components/Register";
-import Reset from "./components/Reset";
-import Dashboard from "./components/Dashboard";
+import Login from "./components/Login/Login";
+import Register from "./components/Login/Register";
+import Reset from "./components/Login/Reset";
+import Stocks from "./components/Stocks";
 
 function App() {
   return (
@@ -15,7 +15,12 @@ function App() {
           <Route exact path="/" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/reset" element={<Reset />} />
-          <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path="/stocks" element={<Stocks />} />
+          <Route exact path="/buy" element={<Stocks />} />
+          <Route exact path="/sell" element={<Stocks />} />
+          <Route exact path="/progress" element={<Stocks />} />
+          <Route exact path="/news" element={<Stocks />} />
+          <Route exact path="/settings" element={<Stocks />} />
         </Routes>
       </Router>
     </div>

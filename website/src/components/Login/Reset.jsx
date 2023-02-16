@@ -2,18 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { auth, sendPasswordReset } from "../firebase";
+import { auth, sendPasswordReset } from "../../firebase";
 import { LoginContainer } from "./LoginContainer";
 import { LoginFormContainer } from "./LoginFormContainer";
 import { LoginInput } from "./LoginInput";
 
-function Reset() {
+const Reset = () => {
   const [email, setEmail] = useState("");
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
   useEffect(() => {
     if (loading) return;
-    if (user) navigate("/dashboard");
+    if (user) navigate("/stocks");
   }, [user, loading]);
   return (
     <LoginContainer>

@@ -3,8 +3,9 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { auth, db, logout } from "../firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
-import { Sidebar } from "./Sidebar";
-function Dashboard() {
+import { StockData } from "./StockData";
+import { Content } from "./Content";
+const Stocks = () => {
   const [user, loading, error] = useAuthState(auth);
   const [name, setName] = useState("");
   const navigate = useNavigate();
@@ -25,9 +26,12 @@ function Dashboard() {
     fetchUserName();
   }, [user, loading]);
   return (
-    <div className="h-screen w-screen">
-      <Sidebar />
-    </div>
+    <Content title="My Stocks">
+      <div className="w-full flex gap-4"> {/* Stock display container */}
+        <StockData symbol="IBM"/>
+        <StockData symbol="GOOG"/>
+      </div>
+    </Content>
   );
 }
-export default Dashboard;
+export default Stocks;

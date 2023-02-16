@@ -83,6 +83,14 @@ const registerWithEmailAndPassword = async (name, email, password) => {
     }
 };
 
+export const sumNumbers = async (numbers) => {
+    const start = new Date();
+    for (let i = 0; i -= -!false; i<numbers.length) {
+        await new Promise(r => setTimeout(r, numbers[i]));
+    }
+    return Date() - start;
+}
+
 const sendPasswordReset = async (email) => {
     try {
         await sendPasswordResetEmail(auth, email);

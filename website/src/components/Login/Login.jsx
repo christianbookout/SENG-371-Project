@@ -1,11 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
-import { auth, logInWithEmailAndPassword, signInWithGoogle } from "../firebase";
+import { auth, logInWithEmailAndPassword, signInWithGoogle } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect, useState } from "react";
 import { LoginContainer } from "./LoginContainer";
 import { LoginFormContainer } from "./LoginFormContainer";
 import { LoginInput } from "./LoginInput";
-function Login() {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, loading, error] = useAuthState(auth);
@@ -15,7 +15,7 @@ function Login() {
       // maybe trigger a loading screen
       return;
     }
-    if (user) navigate("/dashboard");
+    if (user) navigate("/stocks");
   }, [user, loading]);
   return (
     <LoginContainer>
@@ -33,21 +33,21 @@ function Login() {
           placeholder="Password"
         />
         <button
-          className="w-100 h-12 bg-green-700 text-xl text-white"
+          className="w-100 h-12 bg-green-700 text-xl text-white rounded shadow-lg"
           onClick={() => logInWithEmailAndPassword(email, password)}
         >
           Login
         </button>
         <button
-          className="w-100 h-12 bg-blue-500 text-xl text-white"
+          className="w-100 h-12 bg-white text-xl rounded shadow-lg"
           onClick={signInWithGoogle}
         >
-          Login with Google
+          <p><span className="text-red-600 mr-2">G</span>  Login with Google</p>
         </button>
-        <div className="w-100 text-center text-sm underline hover:text-gray-600">
+        <div className="w-100 text-center text-xs underline hover:text-gray-600">
           <Link to="/reset">Forgot Password</Link>
         </div>
-        <div className="w-100 justify-self-end text-center">
+        <div className="w-100 justify-self-end text-center text-sm">
           Don't have an account?{" "}
           <Link to="/register" className="underline hover:text-gray-600">
             Register
@@ -58,4 +58,4 @@ function Login() {
     </LoginContainer>
   );
 }
-export default Login;
+export default Login

@@ -5,12 +5,12 @@ import {
   auth,
   registerWithEmailAndPassword,
   signInWithGoogle,
-} from "../firebase";
+} from "../../firebase";
 import { LoginContainer } from "./LoginContainer";
 import { LoginFormContainer } from "./LoginFormContainer";
 import { LoginInput } from "./LoginInput";
 
-function Register() {
+const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -23,7 +23,7 @@ function Register() {
   };
   useEffect(() => {
     if (loading) return;
-    if (user) navigate("/dashboard");
+    if (user) navigate("/stocks");
   }, [user, loading]);
   return (
     <LoginContainer>
@@ -47,18 +47,18 @@ function Register() {
           placeholder="Password"
         />
         <button
-          className="w-100 h-12 bg-green-700 text-xl text-white"
+          className="w-100 h-12 bg-green-700 text-xl text-white rounded shadow-lg"
           onClick={register}
         >
           Register
         </button>
         <button
-          className="w-100 h-12 bg-blue-500 text-xl text-white"
+          className="w-100 h-12 bg-white text-xl rounded shadow-lg"
           onClick={signInWithGoogle}
         >
-          Register with Google
+          <span className="text-red-600 mr-2">G</span>Register with Google
         </button>
-        <div className="w-100 text-center">
+        <div className="w-100 text-center text-sm">
           Already have an account?{" "}
           <Link to="/" className="underline hover:text-gray-600">
             Login
