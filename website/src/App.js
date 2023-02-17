@@ -5,6 +5,7 @@ import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
 import Reset from "./components/Login/Reset";
 import Stocks from "./components/Stocks";
+import { FlaskTest } from "./components/FlaskTest";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
           <Route exact path="/sell" element={<Stocks />} />
           <Route exact path="/progress" element={<Stocks />} />
           <Route exact path="/news" element={<Stocks />} />
-          <Route exact path="/settings" element={<Stocks />} />
+          <Route exact path="/settings" element={<FlaskTest/>} />
         </Routes>
       </Router>
     </div>
