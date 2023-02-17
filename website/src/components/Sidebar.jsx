@@ -10,11 +10,11 @@ export const Sidebar = () => {
         </div>
         <div className="w-100 mx-4 mb-8 h-0.5 rounded bg-white" />
         <div class="block px-4 pb-2 pb-0 text-white">
-          <SidebarLink text="My Stocks" link="" />
+          <SidebarLink text="My Stocks" link="/stocks" />
           <SidebarLink text="Buy" link="" />
           <SidebarLink text="Sell" link="" />
           <SidebarLink text="View Progress" link="" />
-          <SidebarLink text="News" link="" />
+          <SidebarLink text="News" link="/news" />
           <SidebarLink text="Settings" link="" />
           <button
             onClick={() => logout()}
