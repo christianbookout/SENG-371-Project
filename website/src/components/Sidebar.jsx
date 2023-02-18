@@ -15,7 +15,7 @@ export const Sidebar = () => {
           <SidebarLink text="Sell" link="" />
           <SidebarLink text="View Progress" link="" />
           <SidebarLink text="News" link="" />
-          <SidebarLink text="Settings" link="" />
+          <SidebarLink text="Settings" link="/settings" />
           <button
             onClick={() => logout()}
             className="w-full rounded-lg p-2 text-left text-white hover:bg-blue-400 focus:bg-blue-700"
