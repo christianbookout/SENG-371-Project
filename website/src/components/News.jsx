@@ -29,9 +29,7 @@ const News = () => {
     return (
       <Content title="News">
         <div className="w-full flex flex-col gap-4">
-          <NewsData symbol="Business"/>
-          <NewsData symbol="Business"/>
-          <NewsData symbol="Business"/>
+          <NewsData articles={9}/>
         </div>
       </Content>
     );
