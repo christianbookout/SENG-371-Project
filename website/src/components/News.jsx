@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { auth, db, logout } from "../firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 import { Content } from "./Content";
+import { NewsData } from "./NewsData";
 
 const News = () => {
     const [user, loading, error] = useAuthState(auth);
@@ -27,7 +28,10 @@ const News = () => {
     }, [user, loading]);
     return (
       <Content title="News">
-        <div className="w-full flex gap-4">
+        <div className="w-full flex flex-col gap-4">
+          <NewsData symbol="Business"/>
+          <NewsData symbol="Business"/>
+          <NewsData symbol="Business"/>
         </div>
       </Content>
     );
