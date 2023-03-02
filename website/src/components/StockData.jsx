@@ -1,6 +1,18 @@
 import { useEffect, useState } from "react"
+import {DefaultApi, ApiClient} from "finnhub";
+
+
 
 export const StockData = (props) => {
+    const api_key = ApiClient.instance.authentications['api_key'];
+    api_key.apiKey = "cfpv98pr01qmi6j4cj90cfpv98pr01qmi6j4cj9g"
+    const finnhubClient = new DefaultApi()
+    
+    // Stock candles
+    finnhubClient.stockCandles("AAPL", "D", 1590988249, 1591852249, (error, data, response) => {
+        console.log(data)
+    });
+
     const [data, setData] = useState();
     const [loading, setLoading] = useState(true);
 

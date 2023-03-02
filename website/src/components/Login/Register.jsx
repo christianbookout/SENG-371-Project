@@ -25,6 +25,7 @@ const Register = () => {
     if (loading) return;
     if (user) navigate("/stocks");
   }, [user, loading]);
+
   return (
     <LoginContainer>
       <LoginFormContainer>
