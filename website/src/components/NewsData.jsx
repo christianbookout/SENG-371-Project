@@ -36,7 +36,7 @@ export const NewsData = (props) => {
                 { loading ? "Loading..." : 
                     arr.map(num => {
                         const article = jsonData.articles[num]
-                        return <NewsArticle urlToImage={article.urlToImage} title={title_format(article.title)}/>
+                        return <NewsArticle url = {article.url} urlToImage={article.urlToImage} title={title_format(article.title)}/>
                     })
                 }
             </div>
