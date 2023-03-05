@@ -23,5 +23,5 @@ class TestNewsArticle:
     def test_abreviate_title(self):
         articles = article.get_random_articles(10)
 
-        assert all(len(article.title) <= 90 for article in articles)
+        assert all(len(article.title) <= 90 for article in articles), "Article titles are above 90 characters after truncation"
 
