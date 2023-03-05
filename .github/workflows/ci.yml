@@ -2,11 +2,11 @@ name: CI
 
 on:
   push:
-    branches:
-      - main
+    # branches:
+    #   - main
   pull_request:
-    branches:
-      - main
+    # branches:
+    #   - main
 
 jobs:
   build-node:
@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./website
+        working-directory: ./website/api
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
