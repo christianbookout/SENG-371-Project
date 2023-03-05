@@ -16,12 +16,12 @@ class TestNewsArticle:
             print(article)
             return (isinstance(article, NewsArticle)
                     and article.title is not None
-                    and article.url_to_image is not None)
+                    and article.url is not None)
         
         assert all(map(article_is_correct, articles)),  "Article content is not stored correctly"
 
     def test_abreviate_title(self):
         articles = article.get_random_articles(10)
 
-        assert all(len(article.title) <= 90 for article in articles)
+        assert all(len(article.title) <= 90 for article in articles), "Article titles are above 90 characters after truncation"
 
