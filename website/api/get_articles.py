@@ -2,13 +2,13 @@ import json
 import random
 
 class NewsArticle:
-    def __init__(self, title, author, description, url, urlToImage, publishedAt, content):
+    def __init__(self, title, author, description, url, url_to_image, published_at, content):
         self.title = title
         self.author = author
         self.description = description
         self.url = url
-        self.urlToImage = urlToImage
-        self.publishedAt = publishedAt
+        self.url_to_image = url_to_image
+        self.published_at = published_at
         self.content = content
 
     def __str__(self):
@@ -23,24 +23,24 @@ class ArticleReader:
         self.json_content = ArticleReader.read_json_file(self.filepath)
         self.article_list = self.json_content["articles"]
 
-    def get_random_articles(self, numArticles : int) -> list:
+    def get_random_articles(self, num_articles : int) -> list:
         """Returns a list with size numArticles of random NewsArticles from the json file"""
-        articleList = []
+        article_list = []
         articles = self.article_list.copy()
-        for _ in range(0, numArticles):
+        for _ in range(0, num_articles):
             index = random.randint(0, len(articles)-1)
             # Ensure no duplicate articles are pulled
             article = articles.pop(index)
-            newArticle = NewsArticle( title       = article["title"]
-                                    , author      = article["author"]
-                                    , description = article["description"]
-                                    , url         = article["url"]
-                                    , urlToImage  = article["urlToImage"]
-                                    , publishedAt = article["publishedAt"]
-                                    , content     = article["content"]
+            new_article = NewsArticle( title       = article["title"]
+                                    , author       = article["author"]
+                                    , description  = article["description"]
+                                    , url          = article["url"]
+                                    , url_to_image = article["urlToImage"]
+                                    , published_at = article["publishedAt"]
+                                    , content      = article["content"]
                                     )
-            articleList.append(newArticle)
-        return articleList
+            article_list.append(new_article)
+        return article_list
 
     @staticmethod
     def read_json_file(filepath: str) -> dict:

@@ -16,7 +16,7 @@ class TestNewsArticle:
             print(article)
             return (isinstance(article, NewsArticle)
                     and article.title is not None
-                    and article.urlToImage is not None)
+                    and article.url_to_image is not None)
         
         assert all(map(article_is_correct, articles)),  "Article content is not stored correctly"
 
