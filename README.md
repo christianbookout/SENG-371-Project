@@ -18,8 +18,8 @@ Milestone 2 is due on Sunday March 5th 2023.
 
 Milestone 2:
 
-* [Request for changes]()
-* [Updated Requirements Document]()
-* [Updated architecture]()
+* [Request for changes](./RequestForChangesInRD (2).pdf)
+* [Updated Requirements Document](./RequirementsDocument.pdf)
+* [Updated architecture](./MentalModel.png)
 * [Pipeline details]()
 * [Limited functionality app]()
