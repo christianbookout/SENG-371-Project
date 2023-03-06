@@ -1,5 +1,3 @@
-import { sumNumbers } from "../../firebase";
-
 export const LoginContainer = ({ children }) => {
   return (
     <div className="flex h-screen w-screen flex-col items-center bg-blue-500 pt-16 pb-4">
