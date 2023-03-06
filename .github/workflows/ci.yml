@@ -22,9 +22,6 @@ jobs:
   #     - run: npx cypress run
   cypress-run:
     name: Build and test Node.js app
-    defaults:
-      run:
-        working-directory: ./website
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -36,6 +33,7 @@ jobs:
         with:
           build: npm run build
           start: npm start
+          working-directory: ./website
   build-flask:
     name: Build and test Flask app
     runs-on: ubuntu-latest
