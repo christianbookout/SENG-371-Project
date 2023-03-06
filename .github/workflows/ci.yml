@@ -9,20 +9,32 @@ on:
       - main
 
 jobs:
-  build-node:
-    name: Build and test Node.js app
+  # build-node:
+  #   name: Build and test Node.js app
+  #   runs-on: ubuntu-latest
+  #   defaults:
+  #     run:
+  #       working-directory: ./website
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         node-version: "18.x"
+  #     - run: npm install
+  #     - run: npm run start
+  #     - run: npx cypress run
+  cypress-run:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./website
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v5.1.0 # use the explicit version number
         with:
-          node-version: "18.x"
-      - run: npm install
-      - run: npm run start
-      - run: npx cypress run
+          build: npm run build
+          start: npm start
   build-flask:
     name: Build and test Flask app
     runs-on: ubuntu-latest
