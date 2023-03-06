@@ -23,7 +23,7 @@ jobs:
   cypress-run:
     name: Build and test Node.js app
     defaults:
-      build, start:
+      run:
         working-directory: ./website
     runs-on: ubuntu-latest
     steps:
