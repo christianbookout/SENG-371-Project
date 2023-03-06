@@ -22,8 +22,8 @@ jobs:
           node-version: "18.x"
       - run: npm install
       - run: npm run start &
-      - sleep: 15
-      - run: npm test
+      - sleep: 10
+      - run: npx cypress run
   build-flask:
     name: Build and test Flask app
     runs-on: ubuntu-latest
