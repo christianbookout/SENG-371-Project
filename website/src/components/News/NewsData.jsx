@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 // TODO make this work with the API instead of the JSON file
-import jsonData from "../articles.json";
+import jsonData from "../../articles.json";
 import { NewsArticle } from "./NewsArticle";
 
 //Cuts off the title of articles that are over 90 characters to prevent cut-offs, then appends "..." to them.

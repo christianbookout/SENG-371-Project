@@ -26,7 +26,7 @@ const Stocks = () => {
     fetchUserName();
   });
   return (
-    <Content title="My Stocks">
+    <Content title="My Stocks2">
       <div className="flex w-full gap-4">
         {" "}
         {/* Stock display container */}
