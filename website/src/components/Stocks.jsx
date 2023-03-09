@@ -17,7 +17,7 @@ const Stocks = () => {
       setName(data.name);
     } catch (err) {
       console.error(err);
-      alert("An error occured while fetching user data");
+      // alert("An error occured while fetching user data");
     }
   };
   useEffect(() => {
@@ -26,7 +26,7 @@ const Stocks = () => {
     fetchUserName();
   });
   return (
-    <Content title="My Stocks2">
+    <Content title="My Stocks">
       <div className="flex w-full gap-4">
         {" "}
         {/* Stock display container */}

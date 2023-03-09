@@ -5,6 +5,7 @@ import Reset from "./components/Login/Reset";
 import Stocks from "./components/Stocks";
 import News from "./components/News/News";
 import { Buy } from "./components/Buy/Buy";
+import { Sell } from "./components/Sell/Sell";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Route exact path="/reset" element={<Reset />} />
           <Route exact path="/stocks" element={<Stocks />} />
           <Route exact path="/buy" element={<Buy/>} />
-          <Route exact path="/sell" element={<Stocks />} />
+          <Route exact path="/sell" element={<Sell />} />
           <Route exact path="/progress" element={<Stocks />} />
           <Route exact path="/news" element={<News />} />
           <Route exact path="/settings" element={<Stocks />} />

@@ -9,7 +9,7 @@ export const Content = (props) => {
           <h1 className="text-2xl">{props.title}</h1>
           <div className="my-2 h-0.5 w-full rounded bg-gray-300 px-16" />
         </div>
-        <div className="flex h-full w-full px-8 py-2">{props.children}</div>
+        <div className="flex h-full w-full px-8 pt-2">{props.children}</div>
       </div>
     </div>
   );
