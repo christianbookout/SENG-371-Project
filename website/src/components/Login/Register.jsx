@@ -14,7 +14,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
 
   const register = () => {
@@ -24,8 +24,7 @@ const Register = () => {
   useEffect(() => {
     if (loading) return;
     if (user) navigate("/stocks");
-  }, [user, loading]);
-
+  }, [user, loading, navigate]);
   return (
     <LoginContainer>
       <LoginFormContainer>
@@ -48,16 +47,16 @@ const Register = () => {
           placeholder="Password"
         />
         <button
-          className="w-100 h-12 bg-green-700 text-xl text-white rounded shadow-lg"
+          className="w-100 h-12 rounded bg-green-700 text-xl text-white shadow-lg"
           onClick={register}
         >
           Register
         </button>
         <button
-          className="w-100 h-12 bg-white text-xl rounded shadow-lg"
+          className="w-100 h-12 rounded bg-white text-xl shadow-lg"
           onClick={signInWithGoogle}
         >
-          <span className="text-red-600 mr-2">G</span>Register with Google
+          <span className="mr-2 text-red-600">G</span>Register with Google
         </button>
         <div className="w-100 text-center text-sm">
           Already have an account?{" "}
@@ -69,5 +68,5 @@ const Register = () => {
       </LoginFormContainer>
     </LoginContainer>
   );
-}
+};
 export default Register;

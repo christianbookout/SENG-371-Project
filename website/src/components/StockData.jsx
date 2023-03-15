@@ -37,15 +37,15 @@ export const StockData = (props) => {
         }
     }
 
-    useEffect(() => {
-        fetchData();
-    }, []);
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
-    return (
-        <div className="w-full h-80 rounded-3xl shadow-xl bg-white">
-            <div className="w-full h-full overflow-hidden text-sm">
-                {loading ? "loading" : JSON.stringify(data)}
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="h-80 w-full rounded-3xl bg-white shadow-xl">
+      <div className="h-full w-full overflow-hidden text-sm">
+        {loading ? "loading" : JSON.stringify(data)}
+      </div>
+    </div>
+  );
+};

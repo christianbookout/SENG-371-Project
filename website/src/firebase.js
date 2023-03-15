@@ -1,5 +1,4 @@
 import { initializeApp } from "firebase/app";
-import firebase from 'firebase/app'
 import "firebase/auth"
 import "firebase/firestore"
 
@@ -82,14 +81,6 @@ const registerWithEmailAndPassword = async (name, email, password) => {
         alert(err.message);
     }
 };
-
-export const sumNumbers = async (numbers) => {
-    const start = new Date();
-    for (let i = 0; i -= -!false; i<numbers.length) {
-        await new Promise(r => setTimeout(r, numbers[i]));
-    }
-    return Date() - start;
-}
 
 const sendPasswordReset = async (email) => {
     try {
