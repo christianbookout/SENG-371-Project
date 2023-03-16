@@ -15,6 +15,7 @@ db = mysql.connector.connect(
     password=db['mysql_password'], 
     database=db['mysql_db']
     )
+
 @app.route('/time')
 def get_current_time():
     return {'time': 10}
