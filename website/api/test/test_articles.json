@@ -1,0 +1,383 @@
+{
+    "status": "ok",
+    "totalResults": 32335,
+    "articles": [
+        {
+            "source": {
+                "id": "cnn",
+                "name": "CNN"
+            },
+            "author": "Paul R. La Monica",
+            "title": "Did investors learn nothing from last year's market meltdown?",
+            "description": "Meme stock mania was supposed to be over, right? Guess what: It's not.",
+            "url": "https://www.cnn.com/2023/02/05/investing/stocks-week-ahead/index.html",
+            "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/230202112337-01-bed-bath-beyond-0904-file.jpg?c=16x9&q=w_800,c_fill",
+            "publishedAt": "2023-02-05T12:25:50Z",
+            "content": "A version of this story first appeared in CNN Business Before the Bell newsletter. Not a subscriber? You can sign up right here.\r\nMeme stock mania was supposed to be over, right? Guess what: Its not.… [+5865 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": null,
+            "title": "Asian stocks slip as investors eye central bank hikes - Reuters",
+            "description": "Asian shares traded cautiously and bonds nursed small losses on Tuesday as investors braced for an eventful week that includes central bank meetings, a slew of earnings reports and key U.S. economic data.",
+            "url": "https://www.reuters.com/markets/global-markets-wrapup-1-2023-01-31/",
+            "urlToImage": "https://www.reuters.com/resizer/Q3HVaZpa5fIxy4i7vlDmbEGTvi0=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/AE3QYTK56JIXPAIN342Y2P2AYE.jpg",
+            "publishedAt": "2023-01-31T02:12:00Z",
+            "content": "Jan 31 (Reuters) - Asian shares traded cautiously and bonds nursed small losses on Tuesday as investors braced for an eventful week that includes central bank meetings, a slew of earnings reports and… [+3246 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": null,
+            "title": "Stocks firm, dollar on edge ahead of Fed decision - Reuters",
+            "description": "Asia's stockmarkets steadied on Wednesday, with signs of a slowdown in U.S. wages bolstering hopes that the Federal Reserve could hint at an end to interest rate hikes at its meeting later in the day.",
+            "url": "https://www.reuters.com/markets/global-markets-wrapup-1-2023-02-01/",
+            "urlToImage": "https://www.reuters.com/resizer/J9yWDCDc49ri7TF1oZqMTuFRfVc=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/NX7BPG5IQZIRHBQO5FTWRTPXIY.jpg",
+            "publishedAt": "2023-02-01T02:10:00Z",
+            "content": "SINGAPORE, Feb 1 (Reuters) - Asia's stockmarkets steadied on Wednesday, with signs of a slowdown in U.S. wages bolstering hopes that the Federal Reserve could hint at an end to interest rate hikes at… [+3652 chars]"
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "author": null,
+            "title": "London stocks rise on aerospace, energy boost - Reuters.com",
+            "description": "London stocks rise on aerospace, energy boost  Reuters.com",
+            "url": "https://consent.google.com/ml?continue=https://news.google.com/rss/articles/CBMia2h0dHBzOi8vd3d3LnJldXRlcnMuY29tL21hcmtldHMvZXVyb3BlL2xvbmRvbi1zdG9ja3MtcmlzZS1lbmVyZ3ktbWFqb3JzLWdhaW4tc2V0LXdlZWtseS1kZWNsaW5lLTIwMjMtMDItMjQv0gEA?oc%3D5&gl=FR&hl=en-US&pc=n&src=1",
+            "urlToImage": "https://www.reuters.com/pf/resources/images/reuters/reuters-default.png?d=127",
+            "publishedAt": "2023-02-24T10:37:00Z",
+            "content": "We use cookies and data to<ul><li>Deliver and maintain Google services</li><li>Track outages and protect against spam, fraud, and abuse</li><li>Measure audience engagement and site statistics to unde… [+1131 chars]"
+        },
+        {
+            "source": {
+                "id": "engadget",
+                "name": "Engadget"
+            },
+            "author": "Kris Holt",
+            "title": "Google's Workspace apps are getting an updated look",
+            "description": "Google\r\n is bringing some new features to its Workspace\r\n apps in the coming weeks, including a fresh lick of paint. The company is updating the look and feel of Drive, Docs, Sheets, Slides and Chat in the coming weeks, drawing from its Material Design 3 lang…",
+            "url": "https://www.engadget.com/googles-workspace-apps-are-getting-an-updated-look-170404744.html",
+            "urlToImage": "https://s.yimg.com/uu/api/res/1.2/lDMpOaZYvZJ7mWZWC9J.uw--~B/Zmk9ZmlsbDtoPTYzMDtweW9mZj0wO3c9MTIwMDthcHBpZD15dGFjaHlvbg--/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2023-02/5b976f60-b39a-11ed-bd7f-11dfe26796cb.cf.jpg",
+            "publishedAt": "2023-02-23T17:04:04Z",
+            "content": "Google\r\n is bringing some new features to its Workspace\r\n apps in the coming weeks, including a fresh lick of paint. The company is updating the look and feel of Drive, Docs, Sheets, Slides and Chat … [+1682 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "insider@insider.com (Leo Aquino, CEPF)",
+            "title": "A financial advisor who taught over 100,000 Black women how to invest in stocks says 4 investments are 'recession-proof'",
+            "description": "Beginner investors should start with blue chip stocks, REITs, dividend income stocks, and consumer staples, says financial advisor Cassandra Cummings.",
+            "url": "https://www.businessinsider.com/personal-finance/how-to-start-investing-during-recession-market-down-2023-2",
+            "urlToImage": "https://i.insider.com/63efbd040270b1001984e27b?width=1200&format=jpeg",
+            "publishedAt": "2023-02-18T15:00:00Z",
+            "content": "Our experts choose the best products and services to help make smart decisions with your money (here's how). In some cases, we receive a commission from our partners; however, our opinions are our ow… [+3811 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": null,
+            "title": "Dubai leads Gulf markets higher; Qatar ends lower - Reuters",
+            "description": "Dubai stock market closed higher on Wednesday, outperforming the Gulf region, while Qatari stocks retreated amid volatile energy prices.",
+            "url": "https://www.reuters.com/markets/dubai-leads-gulf-markets-higher-qatar-ends-lower-2023-02-01/",
+            "urlToImage": "https://www.reuters.com/resizer/MyQoXqb9dWpL6iKgAwg0WFlRbOo=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/FY4LMVEFAZMQTGMQWUH7KNJFGE.jpg",
+            "publishedAt": "2023-02-01T14:27:00Z",
+            "content": "Feb 1 (Reuters) - Dubai stock market closed higher on Wednesday, outperforming the Gulf region, while Qatari stocks retreated amid volatile energy prices.\r\nDubai's benchmark index (.DFMGI) snapped it… [+2269 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "bevans@insider.com (Brian Evans)",
+            "title": "US stocks drop as Fed officials reinforce Powell's hawkish tone",
+            "description": "US stocks closed lower on Wednesday, with investors weighing the economic outlook after more hawkish remarks from Fed officials.",
+            "url": "https://markets.businessinsider.com/news/stocks/stock-market-news-today-fed-powell-inflation-google-alphabet-economy-2023-2",
+            "urlToImage": "https://i.insider.com/63a49ef52345c00019eaa94b?width=1200&format=jpeg",
+            "publishedAt": "2023-02-08T21:03:01Z",
+            "content": "US stocks extended losses to close lower on Wednesday, as investors assessed the path of interest rates after more hawkish comments from officials. \r\nYesterday, Federal Reserve chair Jerome Powell sa… [+1268 chars]"
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "author": null,
+            "title": "Canadian stocks set to open higher after rate-driven selloff - Reuters",
+            "description": "Canadian stocks set to open higher after rate-driven selloff  Reuters",
+            "url": "https://consent.google.com/ml?continue=https://news.google.com/rss/articles/CBMibGh0dHBzOi8vd3d3LnJldXRlcnMuY29tL3dvcmxkL2FtZXJpY2FzL2NhbmFkaWFuLXN0b2Nrcy1zZXQtb3Blbi1oaWdoZXItYWZ0ZXItcmF0ZS1kcml2ZW4tc2VsbG9mZi0yMDIzLTAyLTI3L9IBAA?oc%3D5&gl=FR&hl=en-US&pc=n&src=1",
+            "urlToImage": "https://www.reuters.com/pf/resources/images/reuters/reuters-default.png?d=127",
+            "publishedAt": "2023-02-27T12:34:00Z",
+            "content": "We use cookies and data to<ul><li>Deliver and maintain Google services</li><li>Track outages and protect against spam, fraud, and abuse</li><li>Measure audience engagement and site statistics to unde… [+1131 chars]"
+        },
+        {
+            "source": {
+                "id": "google-news",
+                "name": "Google News"
+            },
+            "author": null,
+            "title": "Markets: Stocks drop on U.S. inflation data - CTV News",
+            "description": "<ol><li>Markets: Stocks drop on U.S. inflation data  CTV News\r\n</li><li>Stocks sink on inflation data, close out worst week of year - Business News  Castanet.net\r\n</li><li>Stocks Close Lower as a Resilient Economy Bolsters the Case for More Rate Hikes  Barcha…",
+            "url": "https://consent.google.com/ml?continue=https://news.google.com/rss/articles/CBMiZGh0dHBzOi8vd3d3LmN0dm5ld3MuY2EvYnVzaW5lc3Mvc3RvY2tzLWRyb3Atc2VuZC13YWxsLXN0cmVldC10by1pdHMtd29yc3Qtd2Vlay1vZi10aGUteWVhci0xLjYyODczOTTSAQA?oc%3D5&gl=FR&hl=en-US&pc=n&src=1",
+            "urlToImage": "https://upload.wikimedia.org/wikipedia/commons/5/59/CTV_News.svg",
+            "publishedAt": "2023-02-24T10:59:00Z",
+            "content": "We use cookies and data to<ul><li>Deliver and maintain Google services</li><li>Track outages and protect against spam, fraud, and abuse</li><li>Measure audience engagement and site statistics to unde… [+1131 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "insider@insider.com (Carla Mozée)",
+            "title": "Stocks are still too expensive even after falling from 2023 highs as inflation proves stickier than expected, Barclays says",
+            "description": "US stocks \"are trading too rich relative to most outcomes,\" says Barclays, which finds about 40% of stocks in the S&P 500 trading above their 10-year median.",
+            "url": "https://markets.businessinsider.com/news/stocks/stock-market-outlook-valuations-too-high-sp500-inflation-economy-selloff-2023-2",
+            "urlToImage": "https://i.insider.com/6352c3d7ffcac3001876bb26?width=1200&format=jpeg",
+            "publishedAt": "2023-02-27T17:36:50Z",
+            "content": "Investors have pushed stock prices from this year's peak, but it looks like more downward pressure needs to be applied as high inflation is looking to be more stubborn than expected, Barclays says.  … [+2274 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "bevans@insider.com (Brian Evans)",
+            "title": "ChatGPT mania sends these obscure artificial intelligence stocks soaring as hype extends beyond big caps",
+            "description": "The success of ChatGPT has spilled over to small-cap stocks, with investors piling cash into the artificial intelligence craze.",
+            "url": "https://markets.businessinsider.com/news/stocks/chatgpt-openai-artificial-intelligence-stocks-bigbearai-bbai-soundhound-ai-soun-2023-2",
+            "urlToImage": "https://i.insider.com/63da7f42e33c4000193a817c?width=1200&format=jpeg",
+            "publishedAt": "2023-02-01T15:26:44Z",
+            "content": "The craze surrounding OpenAI's ChatGPT has reached small-cap artificial intelligence stocks, as investors relay excitement over the potential future of the space. \r\nUnder-the-radar firms BigBear.ai a… [+1323 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "insider@insider.com (Carla Mozée)",
+            "title": "Turkey stocks drop, lira hovers near record low as President Erdogan declares a 3-month state of emergency after devastating earthquake",
+            "description": "Steep losses in Turkish stocks triggered two trading halts on Tuesday as the country works through a deadly 7.8 earthquake.",
+            "url": "https://markets.businessinsider.com/news/stocks/turkey-earthquake-stocks-lira-currency-markets-erdogan-emergency-syria-2023-2",
+            "urlToImage": "https://i.insider.com/63e26c9e96242f0019e7bd65?width=1200&format=jpeg",
+            "publishedAt": "2023-02-07T15:26:24Z",
+            "content": "Stocks in Turkey dropped and the country's currency fell Tuesday, extending losses as areas of the country enter a state of emergency in the wake of a strong earthquake that has killed thousands of p… [+1165 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": null,
+            "title": "Meta surges on cost cut, buyback plans; lifts mega-cap stocks - Reuters",
+            "description": "Shares of Meta Platforms Inc <a href=\"https://www.reuters.com/companies/META.O\" target=\"_blank\">(META.O)</a> soared nearly 20% in premarket trading on Thursday as the Facebook parent wooed investors with plans to rein on costs and a new $40 billion share buyb…",
+            "url": "https://www.reuters.com/technology/meta-surges-cost-cut-buyback-plans-lifts-mega-cap-stocks-2023-02-02/",
+            "urlToImage": "https://www.reuters.com/resizer/LKwlUqQzVodoXiMEGmSmL9PJr1w=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/BILPPZJGJ5KZ3ICQDVUQ4FAYFI.jpg",
+            "publishedAt": "2023-02-02T11:02:00Z",
+            "content": "Feb 2 (Reuters) - Shares of Meta Platforms Inc (META.O) soared nearly 20% in premarket trading on Thursday as the Facebook parent wooed investors with plans to rein on costs and a new $40 billion sha… [+1637 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": null,
+            "title": "Europe's luxury stocks have room to rise, but becoming costly - Reuters",
+            "description": "Europe's glittering luxury companies, the region's top stock-market performers in 2023, may see yet more gains driven by a rebound in Chinese spending, but for some the sector is starting to look expensive.",
+            "url": "https://www.reuters.com/markets/europe/europes-luxury-stocks-have-room-rise-becoming-costly-2023-01-31/",
+            "urlToImage": "https://www.reuters.com/resizer/nUKa6SehL1sDh0IUK-WHn0SLJeY=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/AIGGBMWM2FKY7AQ3TEGRHMBVSU.jpg",
+            "publishedAt": "2023-01-31T07:18:00Z",
+            "content": "LONDON, Jan 31 (Reuters) - Europe's glittering luxury companies, the region's top stock-market performers in 2023, may see yet more gains driven by a rebound in Chinese spending, but for some the sec… [+4333 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": null,
+            "title": "Indian shares fall as insurance companies drag; Adani Group stocks ... - Reuters",
+            "description": "Indian shares reversed earlier gains to trade lower on Wednesday, led by a fall in insurance companies after the country's Union budget proposed to limit tax exemptions for insurance proceeds, while Adani Group shares tumbled.",
+            "url": "https://www.reuters.com/world/india/indian-shares-fall-insurance-companies-drag-adani-group-stocks-tumble-2023-02-01/",
+            "urlToImage": "https://www.reuters.com/resizer/Ll7GVsf8zHpcG5ugfCXcZxN3RdI=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/AWBK7DQS4JKWJEUM7ND6HQ4FHU.jpg",
+            "publishedAt": "2023-02-01T09:27:00Z",
+            "content": "BENGALURU, Feb 1 (Reuters) - Indian shares reversed earlier gains to trade lower on Wednesday, led by a fall in insurance companies after the country's Union budget proposed to limit tax exemptions f… [+1341 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": null,
+            "title": "Chinese investors pivot to stocks from bonds on recovery hopes ... - Reuters",
+            "description": "Chinese investors are starting to shift money from bonds to stocks, betting on a robust recovery for riskier assets as the government's policy pivots to boost growth, the latest report on mutual funds showed.",
+            "url": "https://www.reuters.com/markets/wealth/chinese-investors-pivot-stocks-bonds-recovery-hopes-funds-report-2023-02-01/",
+            "urlToImage": "https://www.reuters.com/resizer/KXWHPhfmySeHiP5WGjgqx3nvD3I=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/X2YGV5MKGZJIDO5RODKERNHFMI.jpg",
+            "publishedAt": "2023-02-01T09:15:00Z",
+            "content": "SHANGHAI, Feb 1 (Reuters) - Chinese investors are starting to shift money from bonds to stocks, betting on a robust recovery for riskier assets as the government's policy pivots to boost growth, the … [+2153 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "jsor@insider.com (Jennifer Sor)",
+            "title": "Meme stocks see big sell-offs as GameStop plummets and Bed Bath & Beyond craters on plans to raise new funds",
+            "description": "Gamestop and AMC plunged in tandem with Bed Bath & Beyond on Tuesday as investors dove out of meme stocks.",
+            "url": "https://markets.businessinsider.com/news/stocks/bed-bath-beyond-gamestop-amc-bankruptcy-meme-stocks-volatility-sell-2023-2",
+            "urlToImage": "https://i.insider.com/524d74d36bb3f7170fe26a92?width=1200&format=jpeg",
+            "publishedAt": "2023-02-07T18:01:21Z",
+            "content": "Meme stocks are being rocked on Tuesday as Bed Bath &amp; Beyond dives on its new plans to avoid bankruptcy, with shares of GameStop and AMC also plummeting.\r\nGameStop shares sank 12% to $21.07, brin… [+1171 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": null,
+            "title": "Adani Group stocks resume fall after $2.5 bln share sale goes through - Reuters",
+            "description": "Most Adani Group stocks dropped on Wednesday, extending losses after a report from short-seller Hindenburg criticised the conglomerate and despite the group completing a $2.5 billion share sale a day earlier.",
+            "url": "https://www.reuters.com/business/adani-group-stocks-resume-fall-after-25-bln-share-sale-goes-through-2023-02-01/",
+            "urlToImage": "https://www.reuters.com/resizer/JdNNuQGag_MApH8DGqQNG-DS4FY=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/SLC2FQMIZVJZNNCICPG5ESHEU4.jpg",
+            "publishedAt": "2023-02-01T04:47:00Z",
+            "content": "BENGALURU, Feb 1 (Reuters) - Most Adani Group stocks dropped on Wednesday, extending losses after a report from short-seller Hindenburg criticised the conglomerate and despite the group completing a … [+1243 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": null,
+            "title": "UK stocks slip after IMF warning, Pets At Home jumps on forecast hike - Reuters",
+            "description": "London's main stock indexes slipped on Tuesday as investors braced for a series of interest rate hikes from major central banks this week, while the IMF's warning about the UK economy added to the downbeat sentiment.",
+            "url": "https://www.reuters.com/markets/europe/uk-stocks-slip-after-imf-warning-pets-home-jumps-forecast-hike-2023-01-31/",
+            "urlToImage": "https://www.reuters.com/resizer/t3kpwOyPyxlTFlyDofe6o4mwTDI=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/N6Q2C3EVBZLEHE4TAY53OXKEUM.jpg",
+            "publishedAt": "2023-01-31T08:45:00Z",
+            "content": "Jan 31 (Reuters) - London's main stock indexes slipped on Tuesday as investors braced for a series of interest rate hikes from major central banks this week, while the IMF's warning about the UK econ… [+1268 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "prosen@insider.com (Phil Rosen)",
+            "title": "There's a massive disconnect between markets and the Fed - and Jerome Powell's messaging could fall upon deaf ears",
+            "description": "Insider's Phil Rosen speaks to experts about how the Federal Reserve's rate hike could impact stocks and market volatility.",
+            "url": "https://www.businessinsider.com/fed-rate-hike-february-nyse-stocks-markets-investing-nyse-powell-2023-1",
+            "urlToImage": "https://i.insider.com/63d978cde33c4000193a698d?width=1200&format=jpeg",
+            "publishedAt": "2023-02-01T11:05:00Z",
+            "content": "Happy hump day, readers. I'm senior reporter Phil Rosen. \r\nIf the collapse of FTX has been the headline story over the last several months, it certainly feels like ChatGPT has taken the mantle for th… [+6007 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "gglover@insider.com (George Glover)",
+            "title": "Short-seller Jim Chanos warned of a US debt default black swan, slammed Tesla's rally and said bulls have dreamed up a 'nirvana' outlook in a recent interview. Here are his 11 best quotes.",
+            "description": "Chanos also shared his thoughts on meme stocks, Hindenburg Research, and a potentially \"apocalyptic\" war between China and the US.",
+            "url": "https://markets.businessinsider.com/news/stocks/jim-chanos-best-quotes-short-seller-debt-default-tesla-outlook-2023-1",
+            "urlToImage": "https://i.insider.com/63d907907db5600019bac3c9?width=1200&format=jpeg",
+            "publishedAt": "2023-01-31T13:33:43Z",
+            "content": "Jim Chanos warned the US defaulting on its debt could represent an economic \"black swan\" event and slammed Tesla's recent share price turnaround, in an interview with CNBC's \"Fast Money\" Monday.\r\nThe… [+3557 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider"
+            },
+            "author": "insider@insider.com (Carla Mozée)",
+            "title": "C3.ai surges 30% to cap off a winning week for many AI stocks and ETFs as ChatGPT frenzy spreads across the market",
+            "description": "ChatGPT and interest in artificial intelligence stocks have helped more than double the value of C3.ai shares this year.",
+            "url": "https://markets.businessinsider.com/news/stocks/chatgpt-ai-c3ai-artificial-intelligence-investing-nvidia-etfs-ambarella-tech-2023-2",
+            "urlToImage": "https://i.insider.com/63dd238d0a08ae0018a6a37c?width=1200&format=jpeg",
+            "publishedAt": "2023-02-03T19:20:13Z",
+            "content": "C3.ai stock rallied to its highest in a year Friday, highlighting a jump in some AI stocks and funds this week as the popularity of the ChatGPT tool spurs investors to run toward exposure to artifici… [+1909 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": null,
+            "title": "Column: U.S. diesel stocks start the year critically low: Kemp - Reuters",
+            "description": "Slowdowns in manufacturing activity and freight transportation have combined with unusually high refinery run rates to stabilise and rebuild U.S. distillate fuel oil inventories modestly since the start of October.",
+            "url": "https://www.reuters.com/markets/commodities/us-diesel-stocks-start-year-critically-low-kemp-2023-02-02/",
+            "urlToImage": "https://www.reuters.com/pf/resources/images/reuters/reuters-default.png?d=129",
+            "publishedAt": "2023-02-02T14:26:00Z",
+            "content": "LONDON, Feb 2 (Reuters) - Slowdowns in manufacturing activity and freight transportation have combined with unusually high refinery run rates to stabilise and rebuild U.S. distillate fuel oil invento… [+3309 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": null,
+            "title": "Most Gulf markets rebound on easing inflation; Saudi stocks fall - Reuters",
+            "description": "Most Gulf bourses rose in early trade on Wednesday, tracking crude oil prices and global equities as a slowdown in U.S. labour costs lifted expectations that the Federal Reserve might hint later in the day at ending interest rate hikes.",
+            "url": "https://www.reuters.com/markets/most-gulf-markets-rebound-easing-inflation-saudi-stocks-fall-2023-02-01/",
+            "urlToImage": "https://www.reuters.com/resizer/MyQoXqb9dWpL6iKgAwg0WFlRbOo=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/FY4LMVEFAZMQTGMQWUH7KNJFGE.jpg",
+            "publishedAt": "2023-02-01T09:35:00Z",
+            "content": "Feb 1 (Reuters) - Most Gulf bourses rose in early trade on Wednesday, tracking crude oil prices and global equities as a slowdown in U.S. labour costs lifted expectations that the Federal Reserve mig… [+2309 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": null,
+            "title": "Indian shares set to fall after Adani group calls off $2.5 bln share sale - Reuters India",
+            "description": "Indian shares are set to open lower on Thursday after a sustained selloff in Adani group stocks as the group cancelled the secondary share sale of its flagship company Adani Enterprises.",
+            "url": "https://www.reuters.com/world/india/indian-shares-set-fall-after-adani-group-calls-off-25-bln-share-sale-2023-02-02/",
+            "urlToImage": "https://www.reuters.com/resizer/VI5m4BmdNOBclZoFhCiHK43iTG4=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/EBI6FKI2BZPLHMXPLIMU7ME47E.jpg",
+            "publishedAt": "2023-02-02T02:41:00Z",
+            "content": "BENGALURU, Feb 2 (Reuters) - Indian shares are set to open lower on Thursday after a sustained selloff in Adani group stocks as the group cancelled the secondary share sale of its flagship company Ad… [+2053 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": null,
+            "title": "Analysis: Fed feeds Wall Street's soft landing hopes, though ... - Reuters",
+            "description": "A more dovish-than-expected message from Federal Reserve Chairman Jerome Powell stands to further boost hopes of slowing rate hikes and a so-called economic soft landing that have fueled a powerful rebound in U.S. stocks.",
+            "url": "https://www.reuters.com/markets/us/fed-feeds-wall-streets-soft-landing-hopes-though-recession-fears-still-loom-2023-02-02/",
+            "urlToImage": "https://www.reuters.com/resizer/eIivZxJfyRRTPesyHYNUtyZwVd0=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/RFAZ7ZLIYZLCZHKGGCVVYQGNGU.jpg",
+            "publishedAt": "2023-02-02T05:32:00Z",
+            "content": "Feb 2 (Reuters) - A more dovish-than-expected message from Federal Reserve Chairman Jerome Powell stands to further boost hopes of slowing rate hikes and a so-called economic soft landing that have f… [+4473 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": null,
+            "title": "FTSE edges higher on positive corporate updates - Reuters UK",
+            "description": "UK stocks inched higher on Wednesday after a slate of positive corporate updates, although the mood was tempered by concerns about a slowing British economy and upcoming monetary policy decisions.",
+            "url": "https://www.reuters.com/world/uk/ftse-edges-higher-positive-corporate-updates-2023-02-01/",
+            "urlToImage": "https://www.reuters.com/resizer/UvNiTKguN0wFQGt0BgAUkFY5Y7M=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/KQKZOB4AABJI7KKG77LIPUUSL4.jpg",
+            "publishedAt": "2023-02-01T08:47:00Z",
+            "content": "Feb 1 (Reuters) - UK stocks inched higher on Wednesday after a slate of positive corporate updates, although the mood was tempered by concerns about a slowing British economy and upcoming monetary po… [+896 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters"
+            },
+            "author": null,
+            "title": "European shares gain on pharma boost; Fed policy decision on tap - Reuters",
+            "description": "European shares edged higher on Wednesday, boosted by gains in Novo Nordisk and other healthcare stocks, with all eyes on the much-anticipated policy decision by the U.S. Federal Reserve later in the day.",
+            "url": "https://www.reuters.com/markets/europe/european-shares-gain-pharma-boost-fed-policy-decision-tap-2023-02-01/",
+            "urlToImage": "https://www.reuters.com/resizer/e70SC3P1lgnnLLhWg5Il6aEVp7s=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/FILE3WCAUBIJHKL6HU7FHIZHWI.jpg",
+            "publishedAt": "2023-02-01T08:46:00Z",
+            "content": "Feb 1 (Reuters) - European shares edged higher on Wednesday, boosted by gains in Novo Nordisk and other healthcare stocks, with all eyes on the much-anticipated policy decision by the U.S. Federal Re… [+1060 chars]"
+        }
+    ]
+}

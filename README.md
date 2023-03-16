@@ -8,7 +8,7 @@ Milestone 1 is due on Friday Febuary 10th 2023.
 
 Milestone 1:
 
-* [Requirements Document](./RequirementsDocument.md)
+* [Requirements Document](./RequirementsDocument.pdf)
 * [Software Self Adaption](./SelfAdaption.md)
 * [UI Prototypes](./UI.md)
 * [Request For Proposal](./RFP.md)
@@ -18,8 +18,8 @@ Milestone 2 is due on Sunday March 5th 2023.
 
 Milestone 2:
 
-* [Request for changes]()
-* [Updated Requirements Document]()
-* [Updated architecture]()
-* [Pipeline details]()
-* [Limited functionality app]()
+* [Request for changes](./RequestForChangesInRD.pdf)
+* [Updated Requirements Document](./UpdatedRequirementsDocument.pdf)
+* [Updated architecture](./UpdatedMentalModel.png)
+* [Pipeline details](https://github.com/christianbookout/SENG-371-Project/wiki/CI-CD)
+* [Limited functionality app](./website)
