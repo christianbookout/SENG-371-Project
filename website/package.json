@@ -13,6 +13,7 @@
     "path-browserify": "^1.0.1",
     "querystring-es3": "^0.2.1",
     "react": "^18.2.0",
+    "react-animated-modal": "^1.1.1",
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.1.1",
     "react-router-dom": "^6.8.0",

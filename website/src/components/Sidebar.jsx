@@ -9,7 +9,7 @@ export const Sidebar = () => {
           <a href="/">Investment Trainer</a>
         </div>
         <div className="w-100 mx-4 h-0.5 rounded bg-white" />
-        <div class="block h-full px-4 pb-2 pb-0 text-white">
+        <div className="block h-full px-4 pb-2 pb-0 text-white">
           <SidebarLink text="My Stocks" link="/stocks" />
           <SidebarLink text="Buy" link="/buy" />
           <SidebarLink text="Sell" link="/sell" />
