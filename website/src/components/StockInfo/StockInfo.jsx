@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { StockInfoCard } from "./StockInfoCard";
-import { fetchStockInfo, fetchCompanyInfo } from "../finnhub";
-import { Modal } from "./Modal";
+import { fetchStockInfo, fetchCompanyInfo } from "../../finnhub";
+import { Modal } from "../Modal";
 
 export const StockInfo = (props) => {
   const [stockInfo, setStockInfo] = useState();
@@ -36,8 +36,9 @@ export const StockInfo = (props) => {
     stockInfo &&
     companyInfo && (
       <div className="my-4 flex h-full w-full flex-col">
-        <Modal visible={visible} setVisible={setVisible}>
-          <p>hi</p>
+        <Modal visible={visible} setVisible={setVisible} small={true}>
+          <p className="text-lg">{companyInfo.name}</p>
+          <p className="mb-8 text-3xl">${stockInfo.c}</p>
         </Modal>
 
         <div className="flex w-full flex-col">

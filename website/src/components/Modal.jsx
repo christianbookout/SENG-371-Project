@@ -5,7 +5,11 @@ export const Modal = (props) => {
         !props.visible && "hidden"
       }`}
     >
-      <div className="fixed inset-y-[12.5%] inset-x-1/4 flex h-3/4 w-full w-1/2 flex-col rounded bg-neutral-100 bg-opacity-100 p-4 shadow-xl">
+      <div
+        className={`fixed inset-y-[5%] inset-x-[12.5%] flex flex-col rounded bg-neutral-100 bg-opacity-100 p-4 shadow-xl ${
+          props.small && "h-100 inset-y-1/4 inset-x-[37.5%] w-1/4"
+        }`}
+      >
         <div className="w-100 flex justify-end">
           <button onClick={() => props.setVisible(false)} className="">
             X

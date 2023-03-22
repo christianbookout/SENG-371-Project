@@ -23,7 +23,7 @@ const Register = () => {
   };
   useEffect(() => {
     if (loading) return;
-    if (user) navigate("/stocks");
+    if (user) navigate("/buy");
   }, [user, loading, navigate]);
   return (
     <LoginContainer>

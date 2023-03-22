@@ -16,12 +16,9 @@ function App() {
           <Route exact path="/" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/reset" element={<Reset />} />
-          <Route exact path="/stocks" element={<Stocks />} />
           <Route exact path="/buy" element={<Buy/>} />
           <Route exact path="/sell" element={<Sell />} />
-          <Route exact path="/progress" element={<Stocks />} />
           <Route exact path="/news" element={<News />} />
-          <Route exact path="/settings" element={<Stocks />} />
         </Routes>
       </Router>
     </div>

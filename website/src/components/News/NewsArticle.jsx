@@ -1,6 +1,6 @@
 export const NewsArticle = (props) => {
   return (
-    <div className="h-60 w-[30%] rounded-2xl bg-gray-900 shadow-md shadow-black">
+    <div className="h-60 w-[48%] rounded-2xl bg-gray-900 shadow-md shadow-black">
       <div className="flex h-full w-full flex-col justify-center gap-3 p-4 text-sm text-slate-100">
         <a
           href={props.url}

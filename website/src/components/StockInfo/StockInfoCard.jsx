@@ -1,4 +1,4 @@
-import { stockInfoFields } from "../finnhub";
+import { stockInfoFields } from "../../finnhub";
 
 export const StockInfoCard = (props) => {
   let { label, value } = props;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Content } from "../Content";
 import { SearchBar } from "../SearchBar";
-import { StockInfo } from "../StockInfo";
+import { StockInfo } from "../StockInfo/StockInfo";
 
 export const Buy = () => {
   const [stock, setStock] = useState();
