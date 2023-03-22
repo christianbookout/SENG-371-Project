@@ -17,7 +17,17 @@ db = mysql.connector.connect(
     password=db['mysql_password'], 
     database=db['mysql_db']
     )
-
+def send_query(query):
+    """Sends a query to the database and returns the result as a list of tuples"""
+    db.reconnect()
+    cur = db.cursor()
+    try:
+        cur.execute(query)
+        result = cur.fetchall()
+        return list(result)
+    except:
+        return 0
+    
 @app.route('/time')
 def get_current_time():
     return {'time': 10}
