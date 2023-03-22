@@ -19,7 +19,7 @@ const Login = () => {
       // maybe trigger a loading screen
       return;
     }
-    if (user) navigate("/stocks");
+    if (user) navigate("/buy");
   }, [user, loading, navigate]);
   return (
     <LoginContainer>

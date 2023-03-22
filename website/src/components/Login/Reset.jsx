@@ -13,7 +13,7 @@ const Reset = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (loading) return;
-    if (user) navigate("/stocks");
+    if (user) navigate("/buy");
   }, [user, loading]);
   return (
     <LoginContainer>
@@ -40,5 +40,5 @@ const Reset = () => {
       </LoginFormContainer>
     </LoginContainer>
   );
-}
+};
 export default Reset;
