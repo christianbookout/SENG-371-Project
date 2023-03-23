@@ -8,7 +8,7 @@ export const Sidebar = (props) => {
         <div className="w-100 text-wrap flex justify-center px-4 pt-8 pb-2 text-2xl font-bold text-white">
           <a href="/">Investment Trainer</a>
         </div>
-        <div className="w-100 mx-4 h-0.5 rounded bg-white" />
+        <div className="w-100 mx-4 mb-2 h-0.5 rounded bg-white" />
         <div className="block h-full px-4 pb-2 pb-0 text-white">
           <SidebarLink text="Buy" link="/buy" />
           <SidebarLink text="Sell" link="/sell" />
