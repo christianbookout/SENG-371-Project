@@ -9,9 +9,6 @@ export const StockGraph = (props) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  // Current time in seconds
-  const curTime = Date.now();
-  const to = new Date(curTime);
   // Default to 1 day
   let timeDifference = 60 * 60 * 24 * 1000;
   let resolution = "15"
@@ -29,6 +26,8 @@ export const StockGraph = (props) => {
       timeDifference *= 365
       break;
   }
+  const curTime = Date.now();
+  const to = new Date(curTime);
   const from = new Date(curTime - timeDifference);
   useEffect(() => {
     const data = getStockCandles(
@@ -65,11 +64,14 @@ export const StockGraph = (props) => {
           range: [from, to],
           rangeslider: {range: [from, to]},
         },
+        yaxis: {
+          tickformat: ',',
+        },
         plot_bgcolor: '#f5f5f5',
         paper_bgcolor: '#f5f5f5'
       }}
       config={{
-        modeBarButtonsToRemove: ['toImage', 'lasso2d', 'select2d', 'zoom2d', 'autoScale2d']
+        modeBarButtonsToRemove: ['toImage', 'lasso2d', 'select2d', 'zoom2d', 'autoScale2d'],
       }}
     />
   );
