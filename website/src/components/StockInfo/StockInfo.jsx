@@ -3,6 +3,7 @@ import { StockInfoCard } from "./StockInfoCard";
 import { fetchStockInfo, fetchCompanyInfo } from "../../finnhub";
 import { Modal } from "../Modal";
 import { StockGraph } from "./StockGraph";
+import { chartPeriodOptions } from "../../consts";
 
 export const StockInfo = (props) => {
   const [stockInfo, setStockInfo] = useState();
@@ -11,6 +12,7 @@ export const StockInfo = (props) => {
   const [loadingInfo, setLoadingInfo] = useState(true);
   const [error, setError] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [period, setPeriod] = useState("day");
 
   useEffect(() => {
     const getData = setTimeout(() => {
@@ -49,7 +51,7 @@ export const StockInfo = (props) => {
         <div className="grid h-full w-full grid-cols-5 gap-2">
           <div className="col-span-4 row-span-2 flex h-full w-full items-center justify-center bg-gray-700">
             <p className="text-lg text-white">
-              <StockGraph symbol={props.ticker} timeLength="day"/>
+              <StockGraph symbol={props.ticker} timeLength={period} />
             </p>
           </div>
           <div className="row-span-2 flex h-full w-full flex-col divide-y-2 rounded border-gray-600 bg-white shadow-lg">
@@ -73,6 +75,17 @@ export const StockInfo = (props) => {
               YTD
             </div>
           </div>
+          {chartPeriodOptions.map((option) => {
+            return (
+              <button
+                onClick={setPeriod(option.value)}
+                key={option}
+                className="flex h-full w-full items-center justify-center hover:bg-gray-100"
+              >
+                {option}
+              </button>
+            );
+          })}
           <div>
             <button
               className="h-full w-full items-center justify-center rounded bg-green-500 text-lg text-white shadow hover:scale-[1.01] hover:bg-green-400"
