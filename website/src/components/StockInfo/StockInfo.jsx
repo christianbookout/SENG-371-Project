@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { StockInfoCard } from "./StockInfoCard";
 import { fetchStockInfo, fetchCompanyInfo } from "../../finnhub";
 import { Modal } from "../Modal";
+import { StockGraph } from "./StockGraph";
 
 export const StockInfo = (props) => {
   const [stockInfo, setStockInfo] = useState();
@@ -47,7 +48,9 @@ export const StockInfo = (props) => {
         </div>
         <div className="grid h-full w-full grid-cols-5 gap-2">
           <div className="col-span-4 row-span-2 flex h-full w-full items-center justify-center bg-gray-700">
-            <p className="text-lg text-white">Stock Chart</p>
+            <p className="text-lg text-white">
+              <StockGraph symbol={props.ticker} timeLength="day"/>
+            </p>
           </div>
           <div className="row-span-2 flex h-full w-full flex-col divide-y-2 rounded border-gray-600 bg-white shadow-lg">
             {Object.keys(stockInfo).map((key) => {

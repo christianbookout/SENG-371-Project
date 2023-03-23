@@ -6,7 +6,6 @@ import Stocks from "./components/Stocks";
 import News from "./components/News/News";
 import { Buy } from "./components/Buy/Buy";
 import { Sell } from "./components/Sell/Sell";
-import { StockGraph } from "./components/StockInfo/StockGraph";
 
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
           <Route exact path="/buy" element={<Buy/>} />
           <Route exact path="/sell" element={<Sell />} />
           <Route exact path="/news" element={<News />} />
-          <Route exact path="/graph" element={<StockGraph />} />
         </Routes>
       </Router>
     </div>
