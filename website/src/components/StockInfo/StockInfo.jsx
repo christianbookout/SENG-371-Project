@@ -50,9 +50,9 @@ export const StockInfo = (props) => {
         </div>
         <div className="grid h-full w-full grid-cols-5 gap-2">
           <div className="col-span-4 row-span-2 flex h-full w-full items-center justify-center bg-gray-700">
-            <p className="text-lg text-white">
+            <div className="text-lg text-white">
               <StockGraph symbol={props.ticker} timeLength={period} />
-            </p>
+            </div>
           </div>
           <div className="row-span-2 flex h-full w-full flex-col divide-y-2 rounded border-gray-600 bg-white shadow-lg">
             {Object.keys(stockInfo).map((key) => {

@@ -42,7 +42,7 @@ export const StockGraph = (props) => {
       );
     }, 500);
     return () => clearTimeout(getData);
-  });
+  }, [getStockCandles]);
 
   return (
     !loading &&

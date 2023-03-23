@@ -7,8 +7,6 @@ const finnhubClient = new finnhub.DefaultApi()
 export const getStockCandles = async (symbol, resolution, from, to, setData, setLoading, setError) => {    
     finnhubClient.stockCandles(symbol, resolution, from, to, (error, data, response) => {
         setData(data);
-        console.log(data);
-        console.log(response);
         setError(error);
     }
     );
