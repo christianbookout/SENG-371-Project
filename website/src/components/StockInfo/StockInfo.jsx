@@ -62,30 +62,18 @@ export const StockInfo = (props) => {
             })}
           </div>
           <div className="col-span-4 flex h-full w-full divide-x-2 rounded border-gray-600 bg-white shadow">
-            <div className="flex h-full w-full items-center justify-center hover:bg-gray-100">
-              1 Day
-            </div>
-            <div className="flex h-full w-full items-center justify-center hover:bg-gray-100">
-              1 Week
-            </div>
-            <div className="flex h-full w-full items-center justify-center hover:bg-gray-100">
-              1 Month
-            </div>
-            <div className="flex h-full w-full items-center justify-center hover:bg-gray-100">
-              YTD
-            </div>
+            {chartPeriodOptions.map((option) => {
+              return (
+                <button
+                  onClick={() => setPeriod(option.value)}
+                  key={option.label}
+                  className="flex h-full w-full items-center justify-center hover:bg-gray-100"
+                >
+                  {option.label}
+                </button>
+              );
+            })}
           </div>
-          {chartPeriodOptions.map((option) => {
-            return (
-              <button
-                onClick={setPeriod(option.value)}
-                key={option}
-                className="flex h-full w-full items-center justify-center hover:bg-gray-100"
-              >
-                {option}
-              </button>
-            );
-          })}
           <div>
             <button
               className="h-full w-full items-center justify-center rounded bg-green-500 text-lg text-white shadow hover:scale-[1.01] hover:bg-green-400"
