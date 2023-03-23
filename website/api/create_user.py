@@ -2,28 +2,30 @@ import yaml
 import mysql.connector
 import json
 import time
+from utils import *
+from api import db, app
 
 
-# Load database credentials from db.yaml
-db = yaml.load(open('db.yaml'), Loader=yaml.FullLoader)
-# Connect to the database
-db = mysql.connector.connect(
-    host=db['mysql_host'], 
-    user=db['mysql_user'], 
-    password=db['mysql_password'], 
-    database=db['mysql_db']
-    )
-
+@app.route('/createUser', methods=['POST'])
 def create_user(request):
-    db.reconnect()
-    cur = db.cursor()
+    """Creates a new user entry in the database"""
 
-    name = request.json['fullname']
-    email = request.json['email']
-    password = request.json['password']
+    name = request.json.get("fullname")
+    email = request.json.get("email")
+    password = request.json.get("password")
+    date = date.today()
+    query = "INSERT INTO Users(fullname, email, password, balance, created_at) VALUES (%s, %s, %s 25000, %s);"
+    args = (name, email, password, date)
+    result = send_query(db, query, args)
+    return result
 
-    query = f"INSERT INTO Users(fullname, email, password, balance) VALUES ('{name}', '{email}', '{password}', 25000);"
-    cur.execute(query)
-    db.commit()
+@app.route('/updateBalance', methods=['PATCH'])
+def update_balance(request):
+    """Updates the balance of a user in the database"""
     
-    return {"status_code": 200}
+    balance = request.json.get("balance")
+    email = request.json.get("email")
+    query = "UPDATE Users SET balance = %s WHERE email = %s"
+    args = (balance, email)
+    send_query(db, query, args)
+    return "", 200
