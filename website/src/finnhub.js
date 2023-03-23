@@ -5,7 +5,7 @@ api_key.apiKey = "cfpv98pr01qmi6j4cj90cfpv98pr01qmi6j4cj9g"
 const finnhubClient = new finnhub.DefaultApi()
 
 export const getStockCandles = async (symbol, resolution, from, to, setData, setLoading, setError) => {    
-    finnhubClient.stockCandles({symbol: symbol}, resolution, from, to, (error, data, response) => {
+    finnhubClient.stockCandles(symbol, resolution, from, to, (error, data, response) => {
         setData(data);
         console.log(data);
         console.log(response);
