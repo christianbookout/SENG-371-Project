@@ -8,15 +8,15 @@ export const SellForm = (props) => {
   const price = stockInfo.c;
   const { balance } = user;
   const max = user.stocks.find((stock) => stock.ticker === ticker)?.quantity;
-  const [quantity, setQuantity] = useState(max || 0);
+  const [quantity, setQuantity] = useState(max);
   const { dispatch } = useContext(store);
 
   const handleClick = () => {
     dispatch({
       type: "SELL_STOCK",
       payload: { ticker: ticker, quantity: quantity, price: price },
-      userId: user.id,
     });
+    setQuantity(0);
     props.setVisible(false);
   };
 

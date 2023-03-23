@@ -29,7 +29,7 @@ const StateProvider = ( { children } ) => {
                         price: action.payload.price,
                         userId: state.user.id
                     }
-                })
+                }).then(response => response.json())
                 buyStockResponse = {
                     stocks: [
                         { ticker: "AAPL", quantity: 100 },
@@ -59,7 +59,7 @@ const StateProvider = ( { children } ) => {
                         price: action.payload.price,
                         userId: state.user.id
                     }
-                })
+                }).then(response => response.json())
                 sellStockResponse = {
                     stocks: [
                         { ticker: "AAPL", quantity: 100 },
@@ -78,6 +78,9 @@ const StateProvider = ( { children } ) => {
                     }
                 };
                 return sellStockState;
+            case 'CREATE_USER':
+            case 'LOGIN_USER':
+            case 'NEW_USER':
             default:
                 throw new Error();
         };

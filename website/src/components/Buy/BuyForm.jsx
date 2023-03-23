@@ -3,11 +3,16 @@ import { store } from "../../store";
 
 export const BuyForm = (props) => {
   const user = useContext(store).state.user;
+  const { dispatch } = useContext(store);
   const { companyInfo, price } = props;
   const [quantity, setQuantity] = useState(0);
 
   const handleClick = () => {
-    //send request to backend
+    dispatch({
+      type: "BUY_STOCK",
+      payload: { ticker: companyInfo.ticker, quantity: quantity, price: price },
+    });
+    setQuantity(0);
     props.setVisible(false);
   };
 

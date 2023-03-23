@@ -21,7 +21,7 @@ function App() {
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/reset" element={<Reset />} />
           <Route exact path="/buy" element={<Buy user={state.state.user}/>} />
-          <Route exact path="/sell" element={<Sell />} />
+          <Route exact path="/sell" element={<Sell key={1}/>} />
           <Route exact path="/news" element={<News />} />
         </Routes>
       </Router>
