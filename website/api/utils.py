@@ -4,17 +4,7 @@ import yaml
 import mysql.connector
 import json
 
-# Load database credentials from db.yaml
-db = yaml.load(open('db.yaml'), Loader=yaml.FullLoader)
-# Connect to the database
-db = mysql.connector.connect(
-    host=db['mysql_host'], 
-    user=db['mysql_user'], 
-    password=db['mysql_password'], 
-    database=db['mysql_db']
-    )
-
-def send_query(query, args):
+def send_query(db, query, args):
     """Sends a query to the database and returns the result as a list of tuples"""
     db.reconnect()
     cur = db.cursor()
