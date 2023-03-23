@@ -29,6 +29,7 @@ export const StockGraph = (props) => {
   const curTime = Date.now();
   const to = new Date(curTime);
   const from = new Date(curTime - timeDifference);
+
   useEffect(() => {
     const getData = setTimeout(() => {
       getStockCandles(
@@ -42,13 +43,12 @@ export const StockGraph = (props) => {
       );
     }, 500);
     return () => clearTimeout(getData);
-  }, [getStockCandles]);
+  }, [timeLength]);
 
   return (
     !loading &&
     data?.c != null && (
       <Plot
-        classname="max-w-full max-h-full"
         data={[
           {
             x: data?.t.map((unixTime) => new Date(unixTime * 1000)),
