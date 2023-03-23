@@ -10,13 +10,22 @@ from api import db, app
 def create_user(request):
     """Creates a new user entry in the database"""
 
-    name = request.json['fullname']
-    email = request.json['email']
-    password = request.json['password']
+    name = request.json.get("fullname")
+    email = request.json.get("email")
+    password = request.json.get("password")
     date = date.today()
     query = "INSERT INTO Users(fullname, email, password, balance, created_at) VALUES (%s, %s, %s 25000, %s);"
     args = (name, email, password, date)
     result = send_query(db, query, args)
     return result
 
- 
+@app.route('/updateBalance', methods=['PATCH'])
+def update_balance(request):
+    """Updates the balance of a user in the database"""
+    
+    balance = request.json.get("balance")
+    email = request.json.get("email")
+    query = "UPDATE Users SET balance = %s WHERE email = %s"
+    args = (balance, email)
+    send_query(db, query, args)
+    return "", 200

@@ -6,50 +6,57 @@ import mysql.connector
 import json
 from utils import *
 from api import db, app
+from get_investments import *
 
 @app.route('/buyStock', methods=['POST'])
 def create_investment(request):
     """Creates a new investment entry in the database"""
 
-    ticker = request.json['ticker']
-    owner = request.json['owner']
+    ticker = request.json.get("ticker")
+    owner = request.json.get("userId")
     purchased_at = datetime.now()
-    purchased_price = request.json['purchased_price']
-    quantity = request.json['quantity']
-    query = "INSERT INTO Investments (owner, ticker, quantity) VALUES (%s, %s, %s);", 
-    args = (owner, ticker, quantity)
-    send_query(db, query, args) 
-    query = "INSERT INTO Transactions (purchaser, ticker, price, time, buy_sell) VALUES (%s, %s, %s, %s, %s, 'buy');"
+    purchased_price = request.json.get("price")
+    quantity = request.json.get("quantity")
+    # need to check if it's update investments or create new investment
+    stock = get_investments(owner, ticker)
+    if(stock!=None):
+        updateInvestment = "UPDATE Investments SET quantity = quantity + %s WHERE owner = %s AND ticker = %s;"
+        args = (quantity, owner, ticker)
+        send_query(db, updateInvestment, args)
+    else:
+        newInvestment = "INSERT INTO Investments (owner, ticker, quantity) VALUES (%s, %s, %s);", 
+        args = (owner, ticker, quantity)
+        send_query(db, newInvestment, args) 
+        
+    newTransaction = "INSERT INTO Transactions (purchaser, ticker, price, time, buy_sell) VALUES (%s, %s, %s, %s, %s, 'buy');"
     args = (owner, ticker, purchased_price, purchased_at)
-    send_query(db, query, args)
-    return "", 200
-
-@app.route('/updateStock', methods=['PATCH'])
-def update_investments(request):
-    """Updates the quantity of an investment in the database"""
-    
-    quantity = request.json['quantity']
-    ticker = request.json['ticker']
-    query = "UPDATE Investments SET quantity = %s WHERE ticker = %s"
-    args = (quantity, ticker)
-    send_query(db, query, args)
-    return "", 200
+    send_query(db, newTransaction, args)
+    updateBalance = "UPDATE Users SET balance = balance - %s WHERE userid = %s"
+    args = (purchased_price * quantity, owner)
+    send_query(db, updateBalance, args)
+    getBalance = "SELECT balance FROM Users WHERE userid = %s;"
+    args = (owner)
+    updated_balance = send_query(db, getBalance, args)
+    getResponse = "SELECT ticker, quantity FROM Investments WHERE owner = %s;"
+    updated_investments = send_query(db, getResponse, args)
+    response = {"stocks": updated_investments, "balance": updated_balance}
+    return response
     
 @app.route('/sellStock', methods=['POST'])
 def sell_investment(request):
     """Creates a new investment entry in the database"""
 
-    ticker = request.json['ticker']
-    owner = request.json['owner']
+    ticker = request.json.get("ticker")
+    owner = request.json.get("userId")
     sold_at = datetime.now()
-    sold_price = request.json['sold_price']
-    quantity = request.json['quantity']
-    query = "INSERT INTO Transactions (purchaser, ticker, price, time, buy_sell) VALUES (%s, %s, %s, %s, 'sell');"
+    sold_price = request.json.get("price")
+    quantity = request.json.get("quantity")
+    new_transaction = "INSERT INTO Transactions (purchaser, ticker, price, time, buy_sell) VALUES (%s, %s, %s, %s, 'sell');"
     args = (owner, ticker, sold_price, sold_at)
-    send_query(db, query, args)
-    query = "SELECT quantity FROM Investments WHERE ticker = %s AND owner = %s;"
+    send_query(db, new_transaction, args)
+    check_quantity = "SELECT quantity FROM Investments WHERE ticker = %s AND owner = %s;"
     args = (ticker, owner)
-    result = send_query(db, query, args)
+    result = send_query(db, check_quantity, args)
     if (result[0][0] == quantity):
         query = "DELETE FROM Investments WHERE ticker = %s AND owner = %s;"
         args = (ticker, owner)
@@ -58,4 +65,13 @@ def sell_investment(request):
         query = "UPDATE Investments SET quantity = %s WHERE ticker = %s AND owner = %s;"
         args = (result[0][0] - quantity, ticker, owner)
         send_query(db, query, args)
-    return "", 200
+    update_balance = "UPDATE Users SET balance = balance + %s WHERE userid = %s"
+    args = (sold_price * quantity, owner)
+    send_query(db, update_balance, args)
+    get_balance = "SELECT balance FROM Users WHERE userid = %s;"
+    args = (owner)
+    updated_balance = send_query(db, get_balance, args)
+    get_response = "SELECT ticker, quantity FROM Investments WHERE owner = %s;"
+    updated_investments = send_query(db, get_response, args)
+    response = {"stocks": updated_investments, "balance": updated_balance}
+    return response
