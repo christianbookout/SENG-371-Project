@@ -14,7 +14,6 @@ export const Sidebar = (props) => {
           <SidebarLink text="Sell" link="/sell" />
           <SidebarLink text="News" link="/news" />
           <SidebarLink text="Settings" link="/settings" />
-          <SidebarLink text="Graph for my cutie patootie" link="/graph" />
           <button
             onClick={() => logout()}
             className="w-full rounded-lg p-2 text-left text-white hover:bg-blue-400 focus:bg-blue-700"
