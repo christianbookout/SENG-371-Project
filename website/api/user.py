@@ -5,7 +5,6 @@ import mysql.connector
 import json
 import time
 
-
 # Load database credentials from db.yaml
 db = yaml.load(open('db.yaml'), Loader=yaml.FullLoader)
 # Connect to the database
@@ -16,17 +15,20 @@ db = mysql.connector.connect(
     database=db['mysql_db']
     )
 
-def create_user(request: dict[str, str]):
+def create_user(request):
     name = request.json.get("fullname")
     email = request.json['email'] 
     password = request.json['password']
-    db.reconnect()
-    cur = db.cursor()
-
-    query = f"INSERT INTO Users(fullname, email, password, balance) VALUES ('{name}', '{email}', '{password}', 25000);"
-    cur.execute(query)
-    db.commit()
-    return {"status_code": 200}
+    user = get_user(email)
+    if(user is not None): 
+        return {"status_code": 401}
+    else:
+        db.reconnect()
+        cur = db.cursor()
+        query = f"INSERT INTO Users(fullname, email, password, balance) VALUES ('{name}', '{email}', '{password}', 25000);"
+        cur.execute(query)
+        db.commit()
+        return user
 
 def login(request):
     db.reconnect()
@@ -34,11 +36,20 @@ def login(request):
 
     email = request.json['email']
     password = request.json['password']
-
     query = f"SELECT * FROM Users WHERE email = '{email}' AND password = '{password}';"
     cur.execute(query)
-    result = cur.fetchall()
+    result = cur.fetchone()
     if len(result) == 0:
         return {"status_code": 401}
     else:
-        return {"status_code": 200}
+        return result
+    
+def get_user(email):
+    db.reconnect()
+    cur = db.cursor()
+    query = f"SELECT * FROM Users WHERE email='{email}';"
+    cur.execute(query)
+    result = cur.fetchall()
+    db.commit()
+    print("result: ", result)
+    return result

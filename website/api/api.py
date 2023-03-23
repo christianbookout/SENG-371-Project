@@ -5,8 +5,7 @@ import yaml
 import mysql.connector
 import json
 from flask_login import LoginManager, login_user, logout_user
-from create_user import *
-from get_user import *
+from user import *
 
 app = Flask(__name__)
 
