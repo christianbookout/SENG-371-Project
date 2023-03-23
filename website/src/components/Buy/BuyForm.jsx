@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { store } from "../../store";
 
 export const BuyForm = (props) => {
+  const user = useContext(store).state.user;
   const { companyInfo, price } = props;
   const [quantity, setQuantity] = useState(0);
 
   const handleClick = () => {
     //send request to backend
-    props.setVisibile(false);
+    props.setVisible(false);
   };
 
   return (
@@ -28,7 +30,7 @@ export const BuyForm = (props) => {
         />
       </div>
       <p className="">Balance:</p>
-      <p className="text-right">${props.balance.toFixed(2)}</p>
+      <p className="text-right">${user.balance.toFixed(2)}</p>
       <div className="w-100 col-span-2 my-1 mb-1 h-0.5 rounded bg-gray-700"></div>
       <p className="">Stock:</p>
       <p className="text-right">{companyInfo.ticker}</p>
@@ -37,11 +39,11 @@ export const BuyForm = (props) => {
       <p className="">Quantity:</p>
       <p className="mb-16 text-right">{quantity || 0}</p>
       <p className="">Total:</p>
-      <p className="text-right">${(price * quantity).toFixed(2)}</p>
+      <p className="text-right">- ${(price * quantity).toFixed(2)}</p>
       <div className="w-100 col-span-2 mb-1 h-0.5 rounded bg-gray-700"></div>
       <p>Remaining Balance:</p>
       <p className="mb-6 text-right">
-        ${(props.balance - quantity * price).toFixed(2)}
+        ${(user.balance - quantity * price).toFixed(2)}
       </p>
 
       <div className="col-span-2 flex items-end">

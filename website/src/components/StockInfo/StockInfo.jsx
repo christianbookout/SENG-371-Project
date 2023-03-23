@@ -3,8 +3,13 @@ import { StockInfoCard } from "./StockInfoCard";
 import { fetchStockInfo, fetchCompanyInfo } from "../../finnhub";
 import { Modal } from "../Modal";
 import { BuyForm } from "../Buy/BuyForm";
+import { useContext } from "react";
+import { store } from "../../store";
+import { ErrorMessage } from "./ErrorMessage";
 
 export const StockInfo = (props) => {
+  const { ticker } = props;
+  const user = useContext(store).state.user;
   const [stockInfo, setStockInfo] = useState();
   const [companyInfo, setCompanyInfo] = useState();
   const [loadingStock, setLoadingStock] = useState(true);
@@ -14,32 +19,25 @@ export const StockInfo = (props) => {
 
   useEffect(() => {
     const getData = setTimeout(() => {
-      fetchStockInfo(setStockInfo, setLoadingStock, setError, props.ticker);
-      fetchCompanyInfo(setCompanyInfo, setLoadingInfo, setError, props.ticker);
+      fetchStockInfo(setStockInfo, setLoadingStock, setError, ticker);
+      fetchCompanyInfo(setCompanyInfo, setLoadingInfo, setError, ticker);
     }, 500);
     return () => clearTimeout(getData);
   }, [fetchStockInfo, fetchCompanyInfo]);
 
-  return !props.ticker ? null : loadingStock || loadingInfo ? (
+  return !ticker ? null : loadingStock || loadingInfo ? (
     <div className="flex h-full w-full flex-col items-center justify-center">
       <p className="text-2xl font-bold">Loading...</p>
     </div>
   ) : error ? (
-    <div className="flex h-full w-full flex-col items-center justify-center">
-      <p className="text-2xl font-bold">Stock not found</p>
-      <p>Please check that you have the right ticker symbol</p>
-      <p className="mt-4 text-xs">
-        If this message looks incorrect, the API call limit may have been
-        reached. Please try again in 60 seconds
-      </p>
-    </div>
+    <ErrorMessage />
   ) : (
     stockInfo &&
     companyInfo && (
       <div className="my-4 flex h-full w-full flex-col">
         <Modal visible={visible} setVisible={setVisible} small={true}>
           <BuyForm
-            balance={props.user.balance}
+            balance={user.balance}
             price={stockInfo.c}
             companyInfo={companyInfo}
             setVisible={setVisible}
