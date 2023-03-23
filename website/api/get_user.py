@@ -14,16 +14,15 @@ db = mysql.connector.connect(
     database=db['mysql_db']
     )
 
-def get_user(name="default", email="default"):
+def get_user(fullname, email):
     db.reconnect()
     cur = db.cursor()
-    
-    if (name!="default"):
-        query = f"SELECT * FROM Users WHERE fullname='{name}';"
+    if (fullname!="default"):
+        query = f"SELECT * FROM Users WHERE fullname='{fullname}';"
 
     elif (email!="default"):
         query = f"SELECT * FROM Users WHERE email='{email}';"
 
     cur.execute(query)
-    result = cur.fetchall()
+    result = cur.fetchone()
     return result

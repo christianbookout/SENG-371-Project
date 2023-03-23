@@ -52,12 +52,6 @@ const Register = () => {
         >
           Register
         </button>
-        <button
-          className="w-100 h-12 rounded bg-white text-xl shadow-lg"
-          onClick={signInWithGoogle}
-        >
-          <span className="mr-2 text-red-600">G</span>Register with Google
-        </button>
         <div className="w-100 text-center text-sm">
           Already have an account?{" "}
           <Link to="/" className="underline hover:text-gray-600">
