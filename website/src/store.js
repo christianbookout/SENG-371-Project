@@ -21,7 +21,8 @@ const store = createContext(initialState);
 const { Provider } = store;
 
 const StateProvider = ( { children } ) => {
-    const [state, dispatch] = useReducer((state, action) => {
+    const [state, dispatch] = useReducer(async (state, action) => {
+        console.log(action)
         switch(action.type) {
             case 'BUY_STOCK':
                 let buyStockResponse = fetch('/buyStock', {
@@ -99,11 +100,13 @@ const StateProvider = ( { children } ) => {
                         ...state,
                         user: response
                     };
-                }).catch((error) => {console.log(error)});
+                }).catch(error => {
+                    return error
+                });
             case 'LOGIN_USER':
             case 'NEW_USER':
             default:
-                throw new Error();
+                throw new Error("something went wrong");
         };
     }, initialState);
 

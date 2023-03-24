@@ -37,8 +37,6 @@ def create_user():
     result = send_query(db, query, args)
 
     if len(result) > 0:
-        print("result:")
-        print(result)
         investments = get_investments((result[0][0],))
         investments['balance'] = investments['balance'][0][0]
         print(investments)

@@ -20,7 +20,6 @@ const Register = () => {
         type: "CREATE_USER",
         payload: { fullname: name, email: email, password: password },
       });
-      navigate("/buy");
     } else {
       alert("Please fill all the fields");
     }
@@ -30,7 +29,7 @@ const Register = () => {
     if (user) {
       navigate("/buy");
     }
-  }, []);
+  }, [user]);
 
   return (
     <LoginContainer>
