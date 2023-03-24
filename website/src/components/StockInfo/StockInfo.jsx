@@ -3,6 +3,8 @@ import { StockInfoCard } from "./StockInfoCard";
 import { fetchStockInfo, fetchCompanyInfo } from "../../finnhub";
 import { Modal } from "../Modal";
 import { BuyForm } from "../Buy/BuyForm";
+import { StockGraph } from "./StockGraph";
+import { chartPeriodOptions } from "../../consts";
 
 export const StockInfo = (props) => {
   const [stockInfo, setStockInfo] = useState();
@@ -11,6 +13,7 @@ export const StockInfo = (props) => {
   const [loadingInfo, setLoadingInfo] = useState(true);
   const [error, setError] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [period, setPeriod] = useState("day");
 
   useEffect(() => {
     const getData = setTimeout(() => {
@@ -52,7 +55,9 @@ export const StockInfo = (props) => {
         </div>
         <div className="grid h-full w-full grid-cols-5 gap-2">
           <div className="col-span-4 row-span-2 flex h-full w-full items-center justify-center bg-gray-700">
-            <p className="text-lg text-white">Stock Chart</p>
+            <div className="text-lg text-white">
+              <StockGraph symbol={props.ticker} timeLength={period} />
+            </div>
           </div>
           <div className="row-span-2 flex h-full w-full flex-col divide-y-2 rounded border-gray-600 bg-white shadow-lg">
             {Object.keys(stockInfo).map((key) => {
@@ -62,18 +67,17 @@ export const StockInfo = (props) => {
             })}
           </div>
           <div className="col-span-4 flex h-full w-full divide-x-2 rounded border-gray-600 bg-white shadow">
-            <div className="flex h-full w-full items-center justify-center hover:bg-gray-100">
-              1 Day
-            </div>
-            <div className="flex h-full w-full items-center justify-center hover:bg-gray-100">
-              1 Week
-            </div>
-            <div className="flex h-full w-full items-center justify-center hover:bg-gray-100">
-              1 Month
-            </div>
-            <div className="flex h-full w-full items-center justify-center hover:bg-gray-100">
-              YTD
-            </div>
+            {chartPeriodOptions.map((option) => {
+              return (
+                <button
+                  onClick={() => setPeriod(option.value)}
+                  key={option.label}
+                  className="flex h-full w-full items-center justify-center hover:bg-gray-100"
+                >
+                  {option.label}
+                </button>
+              );
+            })}
           </div>
           <div>
             <button
