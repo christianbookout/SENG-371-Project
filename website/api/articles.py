@@ -1,5 +1,20 @@
 import json
 import random
+from flask import Blueprint, request, jsonify
+
+article_api = Blueprint('article_api', __name__)
+
+@article_api.route('/getArticles', methods=['GET'])
+def get_articles():
+    num_articles = request.args.get('number')
+    reader = ArticleReader("./articles.json")
+    if num_articles is None:
+        return jsonify(reader.article_list), 200
+
+    if not num_articles.isnumeric():
+        return "Number must be an integer", 400
+
+    return jsonify(reader.get_random_articles(int(num_articles))), 200
 
 class ArticleReader:
     def __init__(self, filepath : str):

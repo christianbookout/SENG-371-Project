@@ -1,19 +1,11 @@
-import time
-from get_articles import *
-import yaml
-import mysql.connector
-import json
+from db import get_db
 
-def send_query(db, query, args):
-    """Sends a query to the database and returns the result as a list of tuples"""
+db = get_db()
+
+def send_query(query, args):
     db.reconnect()
     cur = db.cursor()
-    try:
-        cur.execute(query, args)
-        if(query.search("INSERT")!= -1 or query.search("UPDATE") != -1):
-            return {"status_code": 200}
-        elif(query.search("SELECT") != -1):
-            result = cur.fetchall()
-            return list(result)
-    except:
-        return 0
+    cur.execute(query, args)
+    result = cur.fetchall()
+    db.commit()
+    return list(result)

@@ -1,4 +1,4 @@
-from get_articles import ArticleReader
+from articles import ArticleReader
 
 article = ArticleReader("./test/test_articles.json")
 
