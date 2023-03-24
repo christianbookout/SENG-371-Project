@@ -23,3 +23,10 @@ Milestone 2:
 * [Updated architecture](./UpdatedMentalModel.png)
 * [Pipeline details](https://github.com/christianbookout/SENG-371-Project/wiki/CI-CD)
 * [Limited functionality app](./website)
+
+Milestone 3:
+
+*[Root cause analysis](./Fish_bone_diagrams.pdf)
+*[Goal quality metrics](./GQM.pdf)
+*[Application details](https://github.com/christianbookout/SENG-371-Project/wiki)
+*[Completed application code](https://github.com/christianbookout/SENG-371-Project/tree/main/website)
