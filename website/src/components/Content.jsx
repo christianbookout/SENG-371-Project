@@ -4,7 +4,7 @@ import { useState } from "react";
 export const Content = (props) => {
   return (
     <div className="flex h-screen w-screen bg-neutral-100">
-      <Sidebar balance={21000} />
+      <Sidebar />
       <div className="flex h-screen w-full flex-col">
         <div className="flex h-min w-full flex-col items-start justify-center p-8 pb-0">
           <h1 className="text-2xl">{props.title}</h1>

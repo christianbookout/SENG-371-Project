@@ -1,7 +1,10 @@
 import { logout } from "../firebase";
 import { SidebarLink } from "./SidebarLink";
+import { useContext } from "react";
+import { store } from "../store";
 
 export const Sidebar = (props) => {
+  const user = useContext(store).state.user;
   return (
     <div className="flex h-screen flex-col">
       <div className="flex h-full w-64 flex-col bg-blue-500">
@@ -23,7 +26,7 @@ export const Sidebar = (props) => {
         <div className="flex w-full self-end p-4">
           <div className="h-16 w-24 rounded-full bg-gray-200 text-white"></div>
           <div className="flex w-full items-center px-2 text-lg text-white">
-            <p className="w-full">${props.balance.toFixed(2)}</p>
+            <p className="w-full">${user.balance.toFixed(2)}</p>
           </div>
         </div>
       </div>

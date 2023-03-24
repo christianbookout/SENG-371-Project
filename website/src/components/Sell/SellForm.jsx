@@ -1,16 +1,22 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { store } from "../../store";
 
 export const SellForm = (props) => {
-  const { companyInfo, stockInfo, user } = props;
+  const user = useContext(store).state.user;
+  const { companyInfo, stockInfo } = props;
   const { ticker, name } = companyInfo;
   const price = stockInfo.c;
   const { balance } = user;
-  console.log(props);
   const max = user.stocks.find((stock) => stock.ticker === ticker)?.quantity;
-  const [quantity, setQuantity] = useState(max || 0);
+  const [quantity, setQuantity] = useState(max);
+  const { dispatch } = useContext(store);
 
   const handleClick = () => {
-    //send request to backend
+    dispatch({
+      type: "SELL_STOCK",
+      payload: { ticker: ticker, quantity: quantity, price: price },
+    });
+    setQuantity(0);
     props.setVisible(false);
   };
 
