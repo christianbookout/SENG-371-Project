@@ -11,7 +11,6 @@ import { useContext } from "react";
 import { store } from "./store";
 
 function App() {
-  const state = useContext(store);
 
   return (
     <div className="bg-white">
@@ -20,8 +19,8 @@ function App() {
           <Route exact path="/" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/reset" element={<Reset />} />
-          <Route exact path="/buy" element={<Buy user={state.state.user}/>} />
-          <Route exact path="/sell" element={<Sell key={1}/>} />
+          <Route exact path="/buy" element={<Buy />} />
+          <Route exact path="/sell" element={<Sell />} />
           <Route exact path="/news" element={<News />} />
         </Routes>
       </Router>

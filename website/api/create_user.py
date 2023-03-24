@@ -2,12 +2,12 @@ import yaml
 import mysql.connector
 import json
 import time
+from get_user import *
 from utils import *
 from api import db, app
-from get_user import get_user
 
 
-@app.route('/createUser', methods=['POST']) #check if an account already exists for the given email
+@app.route('/createUser', methods=['POST'])
 def create_user(request):
     """Creates a new user entry in the database"""
 
@@ -15,11 +15,10 @@ def create_user(request):
     email = request.json.get("email")
     password = request.json.get("password")
     date = date.today()
-    if (get_user(email=email) != None):
-        return "User already exists", 400
     query = "INSERT INTO Users(fullname, email, password, balance, created_at) VALUES (%s, %s, %s 25000, %s);"
     args = (name, email, password, date)
-    result = send_query(db, query, args)
+    send_query(db, query, args)
+    result = get_user(email)
     return result
 
 @app.route('/updateBalance', methods=['PATCH'])

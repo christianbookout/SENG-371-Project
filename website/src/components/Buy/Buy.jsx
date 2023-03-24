@@ -5,13 +5,14 @@ import { StockInfo } from "../StockInfo/StockInfo";
 import { useNavigate } from "react-router-dom";
 import { store } from "../../store";
 
-export const Buy = (props) => {
+export const Buy = () => {
   const user = useContext(store).state.user;
   const navigate = useNavigate();
   const [stock, setStock] = useState();
 
   useEffect(() => {
-    if (!user) navigate("/");
+    console.log(user);
+    // if (!user) navigate("/");
   });
 
   return (

@@ -1,18 +1,21 @@
 import React, {createContext, useReducer} from 'react';
 
+// const initialState = {
+//     user: {
+//         id: 1,
+//         balance: 21000,
+//         stocks: [
+//             { ticker: "AAPL", quantity: 100 },
+//             { ticker: "TSLA", quantity: 100 },
+//             { ticker: "GME", quantity: 100 },
+//             { ticker: "AA", quantity: 100 },
+//             { ticker: "GO", quantity: 100 },
+//         ]
+//     },
+//     stocks: []
+// };
 const initialState = {
-    user: {
-        id: 1,
-        balance: 21000,
-        stocks: [
-            { ticker: "AAPL", quantity: 100 },
-            { ticker: "TSLA", quantity: 100 },
-            { ticker: "GME", quantity: 100 },
-            { ticker: "AA", quantity: 100 },
-            { ticker: "GO", quantity: 100 },
-        ]
-    },
-    stocks: []
+    user: null
 };
 const store = createContext(initialState);
 const { Provider } = store;
@@ -79,6 +82,24 @@ const StateProvider = ( { children } ) => {
                 };
                 return sellStockState;
             case 'CREATE_USER':
+                fetch('http://localhost:5000/createUser', {
+                    // mode: 'no-cors',
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        "Access-Control-Allow-Origin": "*"
+                    },
+                    body: JSON.stringify({
+                        fullname: action.payload.fullname,
+                        email: action.payload.email,
+                        password: action.payload.password
+                    }),
+                }).then((response) => {
+                    return {
+                        ...state,
+                        user: response
+                    };
+                }).catch((error) => {console.log(error)});
             case 'LOGIN_USER':
             case 'NEW_USER':
             default:

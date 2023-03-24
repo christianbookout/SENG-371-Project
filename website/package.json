@@ -62,7 +62,6 @@
     "allowedHosts": [
       "localhost",
       ".localhost"
-    ],
-    "proxy": "https://localhost:5000/"
+    ]
   }
 }
