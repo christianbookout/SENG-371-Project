@@ -10,7 +10,6 @@ import { Sell } from "./components/Sell/Sell";
 function App() {
   return (
     <div className="bg-white">
-      {/* <Header/> */}
       <Router>
         <Routes>
           <Route exact path="/" element={<Login />} />
