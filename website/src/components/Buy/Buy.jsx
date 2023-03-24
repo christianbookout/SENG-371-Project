@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Content } from "../Content";
 import { SearchBar } from "../SearchBar";
 import { StockInfo } from "../StockInfo/StockInfo";
+import { useNavigate } from "react-router-dom";
+import { store } from "../../store";
 
-export const Buy = () => {
+export const Buy = (props) => {
+  const user = useContext(store).state.user;
+  const navigate = useNavigate();
   const [stock, setStock] = useState();
+
+  useEffect(() => {
+    if (!user) navigate("/");
+  });
 
   return (
     <Content title="Buy Stocks">

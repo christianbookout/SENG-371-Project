@@ -2,22 +2,9 @@ import { Sidebar } from "./Sidebar";
 import { useState } from "react";
 
 export const Content = (props) => {
-  const userData = {
-    balance: 21000,
-    stocks: [
-      { ticker: "AAPL", quantity: 100, buyPrice: 22.77 },
-      { ticker: "TSLA", quantity: 100, buyPrice: 21.77 },
-      { ticker: "GME", quantity: 100, buyPrice: 20.77 },
-      { ticker: "AA", quantity: 100, buyPrice: 25.77 },
-      { ticker: "GO", quantity: 100, buyPrice: 23.77 },
-    ],
-  };
-
-  const [user, setUser] = useState(userData);
-
   return (
     <div className="flex h-screen w-screen bg-neutral-100">
-      <Sidebar balance={user.balance} />
+      <Sidebar />
       <div className="flex h-screen w-full flex-col">
         <div className="flex h-min w-full flex-col items-start justify-center p-8 pb-0">
           <h1 className="text-2xl">{props.title}</h1>
