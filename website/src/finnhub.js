@@ -15,7 +15,7 @@ export const getStockCandles = async (symbol, resolution, from, to, setData, set
 
 export const fetchStockInfo = async (setData, setLoading, setError, ticker) => {
     finnhubClient.quote(
-        ticker,
+    ticker,
         (error, data, response) => {
             setData(data);
             if (data && data["c"] == 0) setError("Could not find Stock");
