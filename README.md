@@ -24,9 +24,12 @@ Milestone 2:
 * [Pipeline details](https://github.com/christianbookout/SENG-371-Project/wiki/CI-CD)
 * [Limited functionality app](./website)
 
+Milestone 3 is due on Friday March 24th 2023.
+
 Milestone 3:
 
-*[Root cause analysis](./Fish_bone_diagrams.pdf)
-*[Goal quality metrics](./GQM.pdf)
-*[Application details](https://github.com/christianbookout/SENG-371-Project/wiki)
-*[Completed application code](https://github.com/christianbookout/SENG-371-Project/tree/main/website)
+* [Root cause analysis](./RequestForChangesInRD.pdf)
+* [Goal Quality Metrics](./UpdatedRequirementsDocument.pdf)
+* [Updated architecture](./UpdatedMentalModel.png)
+* [Application details](https://github.com/christianbookout/SENG-371-Project/wiki)
+* [Application completed](./website)
