@@ -1,4 +1,3 @@
-import click
 from flask import current_app, g
 import mysql.connector
 
@@ -8,13 +7,8 @@ def close_db(a):
     if db is not None:
         db.close()
 
-@click.command('init-db')
-def init_db():
-    get_db()
-
 def init_app(app):
     app.teardown_appcontext(close_db)
-    app.cli.add_command(init_db)
 
 def get_db():
     if 'db' not in g:
