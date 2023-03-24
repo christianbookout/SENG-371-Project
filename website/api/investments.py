@@ -1,5 +1,4 @@
 import datetime
-
 from flask import Blueprint, request, jsonify
 from utils import *
 
@@ -16,12 +15,11 @@ def create_investment():
     quantity = request.json.get("quantity")
 
     balance = get_balance(owner)
-
     if (balance < purchased_price * quantity):
-        return 400, "Insufficient funds"
+        return "Insufficient funds", 400
 
     stock = get_investments(owner, ticker)
-    if stock is not None:
+    if stock != []:
         update_quantity(owner, ticker, stock["quantity"] + quantity)
     else:
         add_investment(owner, ticker, quantity)
@@ -46,7 +44,7 @@ def sell_investment():
 
     owned_quantity = get_investments(owner, ticker)['quantity']
     if (owned_quantity < quantity):
-        return 400, "Insufficient shares"
+        return "Insufficient shares", 400
 
     add_transaction(owner, ticker, sold_price, sold_at, "sell")
 
@@ -76,7 +74,7 @@ def add_transaction(ownerid, ticker, price, time, buy_sell):
 def get_balance(ownerid):
     """Returns a user's balance from the database"""
     query = "SELECT balance FROM Users WHERE userid = %s;"
-    args = (ownerid)
+    args = [ownerid]
     return send_query(query, args)
 
 def update_balance(ownerid, quantity):
@@ -100,11 +98,11 @@ def update_quantity(ownerid, ticker, quantity):
 def get_investments(ownerid, ticker = None):
     """Returns all investments in the database for a given user"""
     if ticker is None:
-        query = f"SELECT ticker, quantity FROM Investments WHERE owner='{ownerid}';"
-        args = {ownerid}
+        query = "SELECT ticker, quantity FROM Investments WHERE owner = %s;"
+        args = [ownerid]
     else:
-        query = f"SELECT ticker, quantity FROM Investments WHERE owner='{ownerid}' AND ticker='{ticker}';"
-        args = {ownerid, ticker}
+        query = "SELECT ticker, quantity FROM Investments WHERE owner = %s AND ticker = %s;"
+        args = (ownerid, ticker)
     
     result = send_query(query, args)
     balance = get_balance(ownerid)
