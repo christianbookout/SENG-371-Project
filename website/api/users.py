@@ -25,6 +25,21 @@ def create_user():
         "stocks": [],
     }, 200
 
+@user_api.route('/login', methods=['POST'])
+def login(request):
+    db.reconnect()
+    cur = db.cursor()
+
+    email = request.json['email']
+    password = request.json['password']
+    query = f"SELECT * FROM Users WHERE email = '{email}' AND password = '{password}';"
+    cur.execute(query)
+    result = cur.fetchone()
+    if len(result) == 0:
+        return {"status_code": 401}
+    else:
+        return result
+
 @user_api.route('/updateBalance', methods=['PATCH'])
 def update_balance():
     """Updates the balance of a user in the database"""

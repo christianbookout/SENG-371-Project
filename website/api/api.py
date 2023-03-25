@@ -1,6 +1,8 @@
 from __init__ import create_app
 from flask_login import LoginManager, login_user, logout_user
 
+from website.api.utils import send_query
+
 app = create_app()
 app.app_context().push()
 
@@ -14,14 +16,13 @@ app.register_blueprint(user_api)
 app.register_blueprint(article_api)
 
 # Configure login manager
-login_manager = LoginManager() 
-login_manager.init_app(app)
+login_manager = LoginManager(app) 
 
 @login_manager.user_loader
 def load_user(email):
     """Loads the user from the database"""
-    query = f"SELECT * FROM Users WHERE email = {email}"
-    result = send_query(query)
+    query = "SELECT * FROM Users WHERE email = %s"
+    result = send_query(query, [email])
     if result == 0:
         return None
     return result
