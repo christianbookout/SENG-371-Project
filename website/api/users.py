@@ -32,8 +32,8 @@ def login(request):
 
     email = request.json['email']
     password = request.json['password']
-    query = f"SELECT * FROM Users WHERE email = '{email}' AND password = '{password}';"
-    cur.execute(query)
+    query = "SELECT * FROM Users WHERE email = %s AND password = %s;"
+    cur.execute(query, [email, password])
     result = cur.fetchone()
     if len(result) == 0:
         return {"status_code": 401}

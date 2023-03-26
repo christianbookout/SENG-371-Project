@@ -11,8 +11,8 @@ def test_create_user():
     result = app.test_client().post('/createUser', json=user_json)
     email = user_json['email']
     assert result is not None
-    query = f"DELETE FROM Users WHERE email = '{email}';"
-    send_query(query)
+    query = "DELETE FROM Users WHERE email = %s;"
+    send_query(query, [email])
 
 def test_create_existing_user(): 
     user_json = { 
@@ -24,9 +24,7 @@ def test_create_existing_user():
     app.test_client().post('/createUser', json=user_json)
     result = app.test_client().post('/createUser', json=user_json) 
     email = user_json['email']
-    print("result: ", result)
-    print("QUEEEERY IS : :: :: " + str(send_query("SELECT * FROM Users;")))
     assert result.status_code == 401 
 
-    query = f"DELETE FROM Users WHERE email = '{email}';"
-    send_query(query)
+    query = "DELETE FROM Users WHERE email = %s;"
+    send_query(query, [email])
