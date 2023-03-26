@@ -1,16 +1,16 @@
 #!/bin/bash
 
-NEWS_FLASK = "news_flask"
-NEWS_NODE = "news_node"
+NEWS_FLASK="news_flask"
+NEWS_NODE="news_node"
 
 if [ $(docker ps -a -q -f name=$NEWS_FLASK) ]; then
     docker stop $NEWS_FLASK
-    docker rm $NEWS_FLASK
+    # docker rm $NEWS_FLASK
 fi
 
 if [ $(docker ps -a -q -f name=$NEWS_NODE) ]; then
     docker stop $NEWS_NODE
-    docker rm $NEWS_NODE
+    # docker rm $NEWS_NODE
 fi
 
 # building flask docker image and running it
