@@ -16,7 +16,6 @@ def test_create_user(client):
     query = "DELETE FROM Users WHERE email = %s;"
     send_query(query, [email])
 
-
 def test_create_existing_user(client): 
     user_json = { 
         "fullname": "Test User",
