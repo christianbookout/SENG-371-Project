@@ -29,6 +29,6 @@ Milestone 3 is due on Sunday March 26th 2023.
 Milestone 3:
 
 * [Root Cause Analysis](./Root_Cause_Analysis.pdf)
-* [Goal Quality Metrics](./GQM.pdf)
+* [Goal Quality Metrics](./Goal_Quality_Metrics.pdf)
 * [Application Walkthrough](https://github.com/christianbookout/SENG-371-Project/wiki/App-Walkthrough)
 * [Application Completed](./website)
