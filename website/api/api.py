@@ -1,11 +1,15 @@
-from __init__ import create_app
-from flask_login import LoginManager, login_user, logout_user
+from flask import Flask
 
-from website.api.utils import send_query
-
-app = create_app()
+app = Flask(__name__)
+app.config.from_object('config.Config')
+with app.app_context():
+    import db
+    db.init_app(app)
+    db.get_db()
 app.app_context().push()
 
+from flask_login import LoginManager
+from utils import send_query
 from articles import article_api
 from users import user_api
 from investments import investment_api

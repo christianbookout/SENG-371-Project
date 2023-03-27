@@ -2,6 +2,8 @@ import datetime
 from utils import *
 from flask import Blueprint, request
 
+from investments import get_investments
+
 user_api = Blueprint('user_api', __name__)
 
 @user_api.route('/createUser', methods=['POST'])
@@ -26,7 +28,7 @@ def create_user():
     }, 200
 
 @user_api.route('/login', methods=['POST'])
-def login(request):
+def login():
     db.reconnect()
     cur = db.cursor()
 
@@ -35,10 +37,18 @@ def login(request):
     query = "SELECT * FROM Users WHERE email = %s AND password = %s;"
     cur.execute(query, [email, password])
     result = cur.fetchone()
-    if len(result) == 0:
-        return {"status_code": 401}
-    else:
-        return result
+    print("res: " + str(result))
+    if result is None or len(result) == 0:
+        return "User doesn't exist", 401
+    
+    stocks = get_investments(result[0])
+    print("stocks: " + str(stocks))
+    return {
+        "username": result[1],
+        "email": email,
+        "balance": result[4],
+        "stocks": [],
+    }, 200
 
 @user_api.route('/updateBalance', methods=['PATCH'])
 def update_balance():
