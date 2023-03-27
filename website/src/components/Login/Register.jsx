@@ -16,10 +16,10 @@ const Register = () => {
 
   const register = async () => {
     if (email && name && password) {
-      dispatch({
+      await dispatch({
         type: "CREATE_USER",
         payload: { fullname: name, email: email, password: password },
-      });
+      }).then(navigate("/buy"));
     } else {
       alert("Please fill all the fields");
     }

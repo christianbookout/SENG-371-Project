@@ -83,7 +83,7 @@ const StateProvider = ( { children } ) => {
                 };
                 return sellStockState;
             case 'CREATE_USER':
-                fetch('http://localhost:5000/createUser', {
+                await fetch('http://localhost:5000/createUser', {
                     // mode: 'no-cors',
                     method: 'POST',
                     headers: {
@@ -93,12 +93,14 @@ const StateProvider = ( { children } ) => {
                     body: JSON.stringify({
                         fullname: action.payload.fullname,
                         email: action.payload.email,
-                        password: action.payload.password
+                        password: action.payload.password,
+                        balance: 25000
                     }),
-                }).then((response) => {
+                }).then((response) => response.json()).then(data => {
+                    console.log(data)
                     return {
                         ...state,
-                        user: response
+                        user: data
                     };
                 }).catch(error => {
                     return error
@@ -106,7 +108,7 @@ const StateProvider = ( { children } ) => {
             case 'LOGIN_USER':
             case 'NEW_USER':
             default:
-                throw new Error("something went wrong");
+                console.log(state.user)
         };
     }, initialState);
 
