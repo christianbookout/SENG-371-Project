@@ -24,7 +24,7 @@ Milestone 2:
 * [Pipeline details](https://github.com/christianbookout/SENG-371-Project/wiki/CI-CD)
 * [Limited functionality app](./website)
 
-Milestone 3 is due on Friday March 24th 2023.
+Milestone 3 is due on Sunday March 26th 2023.
 
 Milestone 3:
 
