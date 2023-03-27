@@ -14,7 +14,7 @@ def create_investment():
     purchased_price = request.json.get("price")
     quantity = request.json.get("quantity")
 
-    balance = get_balance(owner)
+    balance = get_balance(owner)[0][0]
     if (balance < purchased_price * quantity):
         return "Insufficient funds", 400
 
