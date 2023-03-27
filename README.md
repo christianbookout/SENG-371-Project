@@ -30,5 +30,5 @@ Milestone 3:
 
 * [Root Cause Analysis](./Fish_bone_diagrams.pdf)
 * [Goal Quality Metrics](./GQM.pdf)
-* [Application Walkthrough](https://github.com/christianbookout/SENG-371-Project/wiki/App-Walkhrough)
+* [Application Walkthrough](https://github.com/christianbookout/SENG-371-Project/wiki/App-Walkthrough)
 * [Application Completed](./website)
