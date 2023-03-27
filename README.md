@@ -28,8 +28,7 @@ Milestone 3 is due on Sunday March 26th 2023.
 
 Milestone 3:
 
-* [Root cause analysis](./Fish_bone_diagrams.pdf)
+* [Root Cause Analysis](./Fish_bone_diagrams.pdf)
 * [Goal Quality Metrics](./GQM.pdf)
-* [Updated architecture](./UpdatedMentalModel.png)
-* [Application details](https://github.com/christianbookout/SENG-371-Project/wiki)
-* [Application completed](./website)
+* [Application Wiki](https://github.com/christianbookout/SENG-371-Project/wiki)
+* [Application Completed](./website)
