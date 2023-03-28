@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-from __init__ import create_app
-from flask_cors import CORS
-
-app = create_app()
-cors = CORS(app)
-=======
 from flask import Flask
 
 app = Flask(__name__)
@@ -13,7 +6,6 @@ with app.app_context():
     import db
     db.init_app(app)
     db.get_db()
->>>>>>> main
 app.app_context().push()
 
 from flask_login import LoginManager
