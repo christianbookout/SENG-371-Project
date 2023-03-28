@@ -35,14 +35,6 @@ const Login = () => {
         >
           Login
         </button>
-        <button
-          className="w-100 h-12 rounded bg-white text-xl shadow-lg"
-          // onClick={signInWithGoogle}
-        >
-          <p>
-            <span className="mr-2 text-red-600">G</span> Login with Google
-          </p>
-        </button>
         <div className="w-100 text-center text-xs underline hover:text-gray-600">
           <Link to="/reset">Forgot Password</Link>
         </div>

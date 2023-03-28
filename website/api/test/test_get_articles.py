@@ -12,7 +12,6 @@ class TestNewsArticle:
         assert len(articles) == 10, "The number of articles is not 10 when 10 were requested"
         
         def article_is_correct(article):
-            print(article)
             return article['title'] is not None and article['url'] is not None
         
         assert all(map(article_is_correct, articles)),  "Article content is not stored correctly"

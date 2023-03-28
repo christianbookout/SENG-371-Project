@@ -40,6 +40,11 @@ jobs:
   build-flask:
     name: Build and test Flask app
     runs-on: ubuntu-latest
+    env:
+      MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
+      MYSQL_USER: ${{ secrets.MYSQL_USER }}
+      MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
+      MYSQL_DB: ${{ secrets.MYSQL_DB }}
     defaults:
       run:
         working-directory: ./website/api
