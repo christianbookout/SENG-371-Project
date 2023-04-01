@@ -11,4 +11,5 @@ app.app_context().push()
 
 @pytest.fixture()
 def client():
-    return app.test_client()
+    client = app.test_client()
+    yield client
