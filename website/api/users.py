@@ -47,7 +47,7 @@ def login():
         "username": result[1],
         "email": email,
         "balance": result[4],
-        "stocks": [],
+        "stocks": [], # TODO return stocks here
     }, 200
 
 @user_api.route('/updateBalance', methods=['PATCH'])
@@ -71,3 +71,14 @@ def get_user(name = None, email = None):
         args = [email]
     result = send_query(query, args)
     return result
+
+@user_api.route('/getHistory', methods=['GET'])
+def get_history():
+    """Returns the history of a user"""
+    email = request.args.get("email")
+    query = "SELECT * FROM Transaction_history WHERE email = %s;"
+    args = [email]
+    result = send_query(query, args)
+    print("transaction history is: " + str(result))
+    # TODO format the result
+    return result, 200
