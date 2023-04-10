@@ -33,7 +33,7 @@ Milestone 3:
 * [Application Walkthrough](https://github.com/christianbookout/SENG-371-Project/wiki/App-Walkthrough)
 * [Application Completed](./website)
 
-Milestone 4 is due on Wednesday March 12th 2023. 
+Milestone 4 is due on Wednesday April 12th 2023. 
 
 Milestone 4: 
 
