@@ -37,12 +37,10 @@ def login():
     query = "SELECT * FROM Users WHERE email = %s AND password = %s;"
     cur.execute(query, [email, password])
     result = cur.fetchone()
-    print("res: " + str(result))
     if result is None or len(result) == 0:
         return "User doesn't exist", 401
     
     stocks = get_investments(result[0])
-    print("stocks: " + str(stocks))
     return {
         "username": result[1],
         "email": email,
@@ -76,9 +74,15 @@ def get_user(name = None, email = None):
 def get_history():
     """Returns the history of a user"""
     email = request.args.get("email")
-    query = "SELECT * FROM Transaction_history WHERE email = %s;"
+    query = "SELECT * FROM Transaction_history WHERE purchaser = %s;"
     args = [email]
     result = send_query(query, args)
-    print("transaction history is: " + str(result))
-    # TODO format the result
-    return result, 200
+    pretty_result = list(map(lambda x: {
+        "purchaser": x[1],
+        "ticker": x[2],
+        "quantity": x[3],
+        "price": x[4],
+        "date": x[5],
+        "buySell": x[6],
+    }, result)) 
+    return pretty_result, 200

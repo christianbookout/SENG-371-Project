@@ -24,7 +24,7 @@ def create_investment():
     else:
         add_investment(owner, ticker, quantity)
 
-    add_transaction(owner, ticker, purchased_price, purchased_at, "buy")
+    add_transaction(owner, ticker, quantity, purchased_price, purchased_at, "buy")
 
     update_balance(owner, -purchased_price * quantity)
     
@@ -38,7 +38,7 @@ def sell_investment():
 
     ticker = request.json.get("ticker")
     owner = request.json.get("email")
-    sold_at = datetime.now()
+    sold_at = datetime.datetime.now()
     sold_price = request.json.get("price")
     quantity = request.json.get("quantity")
 
@@ -46,7 +46,7 @@ def sell_investment():
     if (owned_quantity < quantity):
         return "Insufficient shares", 400
 
-    add_transaction(owner, ticker, sold_price, sold_at, "sell")
+    add_transaction(owner, ticker, quantity, sold_price, sold_at, "sell")
 
     # If the user sold all of their shares, delete the investment. Otherwise, just update it to reflect the new quantity
     if (owned_quantity == quantity):
@@ -59,20 +59,16 @@ def sell_investment():
 
     return get_investments(owner)
 
-def update_transaction_history(email, ticker, quantity, price, time, buy_sell):
-    """Updates the transaction history in the database"""
-    pass
-
 def add_investment(email, ticker, quantity):
     """Adds an investment to the database"""
     query = "INSERT INTO Investments (owner, ticker, quantity) VALUES (%s, %s, %s);"
     args = (email, ticker, quantity)
     send_query(query, args)
 
-def add_transaction(email, ticker, price, time, buy_sell):
+def add_transaction(email, ticker, quantity, price, time, buy_sell):
     """Adds a transaction to the database"""
-    query = "INSERT INTO Transactions (purchaser, ticker, price, time, buy_sell) VALUES (%s, %s, %s, %s, %s);"
-    args = (email, ticker, price, time, buy_sell)
+    query = "INSERT INTO Transaction_history (purchaser, ticker, quantity, price, time, buy_sell) VALUES (%s, %s, %s, %s, %s, %s);"
+    args = (email, ticker, quantity, price, time, buy_sell)
     send_query(query, args)
 
 def get_balance(email):
@@ -101,14 +97,18 @@ def update_quantity(email, ticker, quantity):
 
 def get_investments(email, ticker = None):
     """Returns all investments in the database for a given user"""
+    def to_investment(data):
+        return list(map(lambda d:{
+            "ticker": d[0],
+            "quantity": d[1]
+        }, data))
     if ticker is None:
         query = "SELECT ticker, quantity FROM Investments WHERE owner = %s;"
         args = [email]
+        result = to_investment(send_query(query, args))
     else:
         query = "SELECT ticker, quantity FROM Investments WHERE owner = %s AND ticker = %s;"
         args = (email, ticker)
-    
-    result = send_query(query, args)
-    print("get_investments returns " + str(result))
+        result = to_investment(send_query(query, args))[0]
     return result
     
