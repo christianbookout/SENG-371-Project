@@ -34,18 +34,18 @@ def login():
 
     email = request.json['email']
     password = request.json['password']
-    query = "SELECT * FROM Users WHERE email = %s AND password = %s;"
-    cur.execute(query, [email, password])
+    query = "SELECT * FROM Users WHERE email = %s;"
+    cur.execute(query, [email])
     result = cur.fetchone()
     if result is None or len(result) == 0:
         return "User doesn't exist", 401
     
-    stocks = get_investments(result[0])
+    stocks = get_investments(result[2])
     return {
         "username": result[1],
         "email": email,
         "balance": result[4],
-        "stocks": [], # TODO return stocks here
+        "stocks": stocks,
     }, 200
 
 @user_api.route('/updateBalance', methods=['PATCH'])
