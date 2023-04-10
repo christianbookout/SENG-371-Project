@@ -34,20 +34,18 @@ def login():
 
     email = request.json['email']
     password = request.json['password']
-    query = "SELECT * FROM Users WHERE email = %s AND password = %s;"
-    cur.execute(query, [email, password])
+    query = "SELECT * FROM Users WHERE email = %s;"
+    cur.execute(query, [email])
     result = cur.fetchone()
-    print("res: " + str(result))
     if result is None or len(result) == 0:
         return "User doesn't exist", 401
     
-    stocks = get_investments(result[0])
-    print("stocks: " + str(stocks))
+    stocks = get_investments(result[2])
     return {
         "username": result[1],
         "email": email,
         "balance": result[4],
-        "stocks": [],
+        "stocks": stocks,
     }, 200
 
 @user_api.route('/updateBalance', methods=['PATCH'])
@@ -71,3 +69,20 @@ def get_user(name = None, email = None):
         args = [email]
     result = send_query(query, args)
     return result
+
+@user_api.route('/getHistory', methods=['GET'])
+def get_history():
+    """Returns the history of a user"""
+    email = request.args.get("email")
+    query = "SELECT * FROM Transaction_history WHERE purchaser = %s;"
+    args = [email]
+    result = send_query(query, args)
+    pretty_result = list(map(lambda x: {
+        "purchaser": x[1],
+        "ticker": x[2],
+        "quantity": x[3],
+        "price": x[4],
+        "date": x[5],
+        "buySell": x[6],
+    }, result)) 
+    return pretty_result, 200
