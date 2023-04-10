@@ -38,7 +38,7 @@ Milestone 4 is due on Wednesday April 12th 2023.
 Milestone 4: 
 
 * [Wiki](https://github.com/christianbookout/SENG-371-Project/wiki)
-* [Request for Changes](./A4_RFC.pdf)
+* [Request for Changes](./RFC.pdf)
 * [Requirement Document](./RequirementDocument.pdf)
 * [Architecture/Mental Model](./UpdatedMentalModel.png)
 * [Software Self Adaptation](./SelfAdaption.md)
