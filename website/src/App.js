@@ -9,6 +9,7 @@ import { Sell } from "./components/Sell/Sell";
 import { useState } from "react";
 import { useContext } from "react";
 import { store } from "./store";
+import { Analytics } from "./components/Analytics";
 
 function App() {
   const state = useContext(store);
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/buy" element={<Buy user={state.state.user}/>} />
           <Route exact path="/sell" element={<Sell key={1}/>} />
           <Route exact path="/news" element={<News />} />
+          <Route exact path="/analytics" element={<Analytics/>} />
         </Routes>
       </Router>
     </div>

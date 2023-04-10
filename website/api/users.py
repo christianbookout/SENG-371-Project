@@ -9,23 +9,31 @@ user_api = Blueprint('user_api', __name__)
 @user_api.route('/createUser', methods=['POST'])
 def create_user():
     """Creates a new user entry in the database"""
-
-    name = request.json.get("fullname")
-    email = request.json.get("email")
-    password = request.json.get("password")
-    balance = request.json.get("balance")
-    date = datetime.datetime.now()
-    if get_user(email=email) != []:
-        return "User already exists", 400
-    query = "INSERT INTO Users(fullname, email, password, balance, created_at) VALUES (%s, %s, %s, %s, %s);"
-    args = (name, email, password, balance, date)
-    send_query(query, args)
-    return {
-        "username": name,
-        "email": email,
-        "balance": balance,
-        "stocks": [],
-    }, 200
+    try:
+        print(request.json)
+        # print(request.data)
+        # print(request.form)
+        name = request.json.get("fullname")
+        email = request.json.get("email")
+        password = request.json.get("password")
+        balance = 25000
+        # balance = request.json.get("balance")
+        date = datetime.datetime.now()
+        if get_user(email=email) != []:
+            return "User already exists", 400
+        query = "INSERT INTO Users(fullname, email, password, balance, created_at) VALUES (%s, %s, %s, %s, %s);"
+        args = (name, email, password, balance, date)
+        send_query(query, args)
+        return {
+            "username": name,
+            "email": email,
+            "balance": balance,
+            "stocks": [],
+        }, 200
+    except Exception as e:
+        print("Error:")
+        print(e)
+        return "Error creating user", 401
 
 @user_api.route('/login', methods=['POST'])
 def login():

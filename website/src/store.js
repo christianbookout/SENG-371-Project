@@ -12,7 +12,7 @@ const initialState = {
             { ticker: "GO", quantity: 100 },
         ]
     },
-    stocks: []
+    // user: {}
 };
 const store = createContext(initialState);
 const { Provider } = store;
@@ -23,6 +23,9 @@ const StateProvider = ( { children } ) => {
             case 'BUY_STOCK':
                 let buyStockResponse = fetch('/buyStock', {
                     method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
                     data: {
                         ticker: action.payload.ticker,
                         quantity: action.payload.quantity,
@@ -51,8 +54,11 @@ const StateProvider = ( { children } ) => {
                 };
                 return buyStockState;
             case 'SELL_STOCK':
-                let sellStockResponse = fetch('/sellStock', {
-                    method: 'POST',
+                    let sellStockResponse = fetch('/sellStock', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
                     data: {
                         ticker: action.payload.ticker,
                         quantity: action.payload.quantity,
@@ -79,6 +85,28 @@ const StateProvider = ( { children } ) => {
                 };
                 return sellStockState;
             case 'CREATE_USER':
+                fetch('http://127.0.0.1:5000/createUser', {
+                    method: 'POST',
+                    headers: {
+                        // 'Access-Control-Allow-Origin': '*',
+                        // 'Access-Control-Allow-Headers': 'Access-Control-Allow-Headers, Content-Type, Authorization',
+                        // 'Access-Control-Allow-Methods': '*',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        fullname: action.payload.name,
+                        password: action.payload.password,
+                        email: action.payload.email,
+                        // balance: 25000
+                    })
+                }).then(response => {console.log(response); return response.json()}).then(data => {
+                    // alert(JSON.stringify(data))
+                    const createUserState = {
+                        ...state,
+                        user: data
+                    };
+                    return createUserState;
+                })
             case 'LOGIN_USER':
             case 'NEW_USER':
             default:

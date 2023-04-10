@@ -1,30 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
-import {
-  auth,
-  registerWithEmailAndPassword,
-  signInWithGoogle,
-} from "../../firebase";
 import { LoginContainer } from "./LoginContainer";
 import { LoginFormContainer } from "./LoginFormContainer";
 import { LoginInput } from "./LoginInput";
+import { store } from "../../store";
 
 const Register = () => {
+  const user = useContext(store).state.user;
+  const { dispatch } = useContext(store);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
 
-  const register = () => {
-    if (!name) alert("Please enter name");
-    registerWithEmailAndPassword(name, email, password);
+  function register(event){
+    event.stopPropagation();
+    console.log("register called")
+    dispatch({
+      type: "CREATE_USER",
+      payload: { name, email, password },
+    });
   };
-  useEffect(() => {
-    if (loading) return;
-    if (user) navigate("/buy");
-  }, [user, loading, navigate]);
+
+  // useEffect(() => {
+  //   // if (loading) return;
+  //   // if (user) navigate("/buy");
+  // }, [user, navigate]);
   return (
     <LoginContainer>
       <LoginFormContainer>
@@ -48,7 +50,7 @@ const Register = () => {
         />
         <button
           className="w-100 h-12 rounded bg-green-700 text-xl text-white shadow-lg"
-          onClick={register}
+          onClick={(e) => register(e)}
         >
           Register
         </button>
