@@ -32,3 +32,16 @@ Milestone 3:
 * [Goal Quality Metrics](./Goal_Quality_Metrics.pdf)
 * [Application Walkthrough](https://github.com/christianbookout/SENG-371-Project/wiki/App-Walkthrough)
 * [Application Completed](./website)
+
+Milestone 4 is due on Wednesday March 12th 2023. 
+
+Milestone 4: 
+
+* [Wiki](https://github.com/christianbookout/SENG-371-Project/wiki)
+* [Request for Changes](./A4_RFC.pdf)
+* [Requirement Document](./A4_RD- SENG371-Requirement_Document.pdf)
+* [Architecture/Mental Model](./MentalModel.png)
+* [Software Self Adaptation](./SelfAdaption.md)
+* [CI/CD](https://github.com/christianbookout/SENG-371-Project/wiki/CI-CD)
+* [Application Walkthrough](https://github.com/christianbookout/SENG-371-Project/wiki/App-Walkthrough)
+* [Application Completed](./website)
