@@ -44,4 +44,4 @@ Milestone 4:
 * [Software Self Adaptation](./FinalizedSoftwareSelfAdaptation.pdf)
 * [CI/CD](https://github.com/christianbookout/SENG-371-Project/wiki/CI-CD)
 * [Finalized UI and Application Walkthrough](https://github.com/christianbookout/SENG-371-Project/wiki/App-Walkthrough-and-UI)
-* [Application Completed with Changes](./website)
+* [Application Completed Source Code with Changes](./website)
