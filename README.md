@@ -40,7 +40,7 @@ Milestone 4:
 * [Wiki](https://github.com/christianbookout/SENG-371-Project/wiki)
 * [Request for Changes](./RFC.pdf)
 * [Requirement Document](./RD.pdf)
-* [Architecture/Mental Model](./FinalizedMentalModel.png)
+* [Architecture/Mental Model](./FinalizedMentalModel.pdf)
 * [Software Self Adaptation](./SelfAdaption.md)
 * [CI/CD](https://github.com/christianbookout/SENG-371-Project/wiki/CI-CD)
 * [Finalized UI and Application Walkthrough](https://github.com/christianbookout/SENG-371-Project/wiki/App-Walkthrough-and-UI)
