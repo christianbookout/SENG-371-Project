@@ -1,30 +1,36 @@
-import React, { useEffect, useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
+import React, { useEffect, useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import {
-  auth,
-  registerWithEmailAndPassword,
-  signInWithGoogle,
-} from "../../firebase";
 import { LoginContainer } from "./LoginContainer";
 import { LoginFormContainer } from "./LoginFormContainer";
 import { LoginInput } from "./LoginInput";
+import { store } from "../../store";
 
 const Register = () => {
+  const navigate = useNavigate();
+  const user = useContext(store).state.user;
+  const { dispatch } = useContext(store);
+
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [user, loading] = useAuthState(auth);
-  const navigate = useNavigate();
 
-  const register = () => {
-    if (!name) alert("Please enter name");
-    registerWithEmailAndPassword(name, email, password);
+  const register = async () => {
+    if (email && name && password) {
+      await dispatch({
+        type: "CREATE_USER",
+        payload: { fullname: name, email: email, password: password },
+      }).then(navigate("/buy"));
+    } else {
+      alert("Please fill all the fields");
+    }
   };
+
   useEffect(() => {
-    if (loading) return;
-    if (user) navigate("/buy");
-  }, [user, loading, navigate]);
+    if (user) {
+      navigate("/buy");
+    }
+  }, [user]);
+
   return (
     <LoginContainer>
       <LoginFormContainer>
@@ -32,7 +38,7 @@ const Register = () => {
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Full Name"
+          placeholder="Name"
         />
         <LoginInput
           type="text"
@@ -47,8 +53,8 @@ const Register = () => {
           placeholder="Password"
         />
         <button
-          className="w-100 h-12 rounded bg-green-700 text-xl text-white shadow-lg"
-          onClick={register}
+          className="w-100 hover: h-12 rounded bg-green-700 bg-green-600 text-xl text-white shadow-lg"
+          onClick={() => register()}
         >
           Register
         </button>

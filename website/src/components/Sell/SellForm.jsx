@@ -8,7 +8,7 @@ export const SellForm = (props) => {
   const price = stockInfo.c;
   const { balance } = user;
   const max = user.stocks.find((stock) => stock.ticker === ticker)?.quantity;
-  const [quantity, setQuantity] = useState(max);
+  const [quantity, setQuantity] = useState(max || 0);
   const { dispatch } = useContext(store);
 
   const handleClick = () => {
@@ -31,6 +31,7 @@ export const SellForm = (props) => {
           type="number"
           pattern="[0-9]*"
           max={max}
+          min={0}
           value={quantity}
           onChange={(e) =>
             setQuantity((v) => (e.target.validity.valid ? e.target.value : v))

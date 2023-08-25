@@ -16,6 +16,7 @@ def create_user():
     balance = request.json.get("balance")
     date = datetime.datetime.now()
     if get_user(email=email) != []:
+        print("User lready exists")
         return "User already exists", 400
     query = "INSERT INTO Users(fullname, email, password, balance, created_at) VALUES (%s, %s, %s, %s, %s);"
     args = (name, email, password, balance, date)

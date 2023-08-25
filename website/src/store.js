@@ -1,24 +1,28 @@
 import React, {createContext, useReducer} from 'react';
 
+// const initialState = {
+//     user: {
+//         id: 1,
+//         balance: 21000,
+//         stocks: [
+//             { ticker: "AAPL", quantity: 100 },
+//             { ticker: "TSLA", quantity: 100 },
+//             { ticker: "GME", quantity: 100 },
+//             { ticker: "AA", quantity: 100 },
+//             { ticker: "GO", quantity: 100 },
+//         ]
+//     },
+//     stocks: []
+// };
 const initialState = {
-    user: {
-        id: 1,
-        balance: 21000,
-        stocks: [
-            { ticker: "AAPL", quantity: 100 },
-            { ticker: "TSLA", quantity: 100 },
-            { ticker: "GME", quantity: 100 },
-            { ticker: "AA", quantity: 100 },
-            { ticker: "GO", quantity: 100 },
-        ]
-    },
-    stocks: []
+    user: null
 };
 const store = createContext(initialState);
 const { Provider } = store;
 
 const StateProvider = ( { children } ) => {
-    const [state, dispatch] = useReducer((state, action) => {
+    const [state, dispatch] = useReducer(async (state, action) => {
+        console.log(action)
         switch(action.type) {
             case 'BUY_STOCK':
                 let buyStockResponse = fetch('/buyStock', {
@@ -79,10 +83,32 @@ const StateProvider = ( { children } ) => {
                 };
                 return sellStockState;
             case 'CREATE_USER':
+                await fetch('http://localhost:5000/createUser', {
+                    // mode: 'no-cors',
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        "Access-Control-Allow-Origin": "*"
+                    },
+                    body: JSON.stringify({
+                        fullname: action.payload.fullname,
+                        email: action.payload.email,
+                        password: action.payload.password,
+                        balance: 25000
+                    }),
+                }).then((response) => response.json()).then(data => {
+                    console.log(data)
+                    return {
+                        ...state,
+                        user: data
+                    };
+                }).catch(error => {
+                    return error
+                });
             case 'LOGIN_USER':
             case 'NEW_USER':
             default:
-                throw new Error();
+                console.log(state.user)
         };
     }, initialState);
 
